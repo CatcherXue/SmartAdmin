@@ -1,0 +1,5 @@
+G:\GitHub\SmartAdmin\SmartAdmin\bin\SmartAdmin.dll
+G:\GitHub\SmartAdmin\SmartAdmin\bin\SmartAdmin.pdb
+G:\GitHub\SmartAdmin\SmartAdmin\obj\Debug\ResolveAssemblyReference.cache
+G:\GitHub\SmartAdmin\SmartAdmin\obj\Debug\SmartAdmin.dll
+G:\GitHub\SmartAdmin\SmartAdmin\obj\Debug\SmartAdmin.pdb
