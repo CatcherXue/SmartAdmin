@@ -193,7 +193,7 @@
 						请输入用户名和密码登录系统。
 					</div>
 
-					<form id="loginform" method="post" action="Login">
+					<form id="loginform" method="post" action="admin/login">
 
 						<p>
 							<label class="required" for="username">用户名:</label>
@@ -208,6 +208,7 @@
 						</p>
 
 						<p>
+                            <input type="hidden" name="verifycode" id="verifycode" value="" />
 							<input type="checkbox" id="remember" class="" value="1" name="remember"/>
 							<label class="choice" for="remember">记住登录?</label>
 						</p>

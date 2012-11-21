@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace SmartAdmin.Controllers
 {
-    public class LoginController : Controller
+    public class UserController : Controller
     {
         //
-        // GET: /Login/
+        // GET: /User/
 
         public ActionResult Index()
         {
