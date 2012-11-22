@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="User">
+  <useCaseModelRootMoniker Id="8fca1b81-50bb-4fc0-ade0-cf37bfc0b2f9" />
+  <nestedChildShapes>
+    <actorShape Id="b4d5e0c9-cadc-41b9-8a0c-8a7b91064170" absoluteBounds="4, 2.25, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="8c6fddfb-7e88-4308-9d21-4b6a35c7f69b" LastKnownName="用户" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseShape Id="dd4d240a-032d-487e-94d1-33abf330ac1a" absoluteBounds="5.375, 1.375, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="e1bdc06e-d3bd-4541-8624-e7a1a0d64c76" LastKnownName="学习经历" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseShape Id="b1a70136-8458-41c0-a159-ba4a5b79a5d6" absoluteBounds="5.375, 2.125, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="f2357261-aca5-4a55-9ab2-eeed26731821" LastKnownName="工作经历" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseShape Id="d72e6535-30ba-49a0-b834-69d4dedaff8a" absoluteBounds="5.375, 2.875, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="91d0dfa2-486c-4088-be9b-b1b3341a9074" LastKnownName="项目经历" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseShape Id="467e17d4-0e84-4b12-885b-ca2e42dc4e84" absoluteBounds="2.25, 1.25, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="e4877195-c539-4765-a157-5723dd5bccb2" LastKnownName="基本信息" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseShape Id="cfe85e14-2137-4a0b-a7f9-d6dd811eb92c" absoluteBounds="2.25, 2, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="6299c813-9d04-4b59-af11-dec61194ae5b" LastKnownName="我的技能" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseShape Id="588006fc-e2bb-43b9-a2a6-a17215961d4a" absoluteBounds="2.25, 2.75, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="2694963f-9008-456c-9c98-d7e3eb1c46e6" LastKnownName="财务状况" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseShape Id="5b0502eb-bab8-4622-850c-1ce2bc4375ad" absoluteBounds="2.25, 3.5, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="e3f1e661-edbf-445d-8aef-7329b20b57f4" LastKnownName="我的心情" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseShape Id="8367ce51-3678-4fee-bdda-a44fed441a7b" absoluteBounds="5.375, 3.5, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="acb43f30-170e-4489-90d8-fab5d4335636" LastKnownName="我的著作" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseShape Id="23d5211c-c02a-4cc7-b81a-9fe41de5b442" absoluteBounds="5.375, 4.125, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="f7a2a142-2484-4470-8d23-5ff1e09baa70" LastKnownName="我的文章" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseShape Id="41e7bf75-48c4-4028-aafc-f1c7b33b286e" absoluteBounds="2.25, 4.25, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="6f76e351-265a-4b99-b70e-31489b2938d2" LastKnownName="我的产品" />
+      <relativeChildShapes />
+    </useCaseShape>
+  </nestedChildShapes>
+</useCaseDiagram>

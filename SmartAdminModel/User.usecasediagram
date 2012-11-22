@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="8fca1b81-50bb-4fc0-ade0-cf37bfc0b2f9" name="User" linkedPackageId="c8bc8995-425f-4716-b69f-dc0018e313df" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="d1017ab4-b79f-484a-8291-17dff8c8f06f">
+      <profileInstance Id="9eeed022-e658-44e1-8ee0-21eff7ad16cc" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="9b2e0f73-e163-444c-a25d-6adcb08143b5">
+      <profileInstance Id="84592e69-aa1d-4e7d-8a68-2745e3813fdb" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="8c6fddfb-7e88-4308-9d21-4b6a35c7f69b" name="用户" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="70547805-298a-480f-b0dd-924f2da08e70" />
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e1bdc06e-d3bd-4541-8624-e7a1a0d64c76" name="学习经历" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="74076461-be79-4ee8-8905-5785a93e4183" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="f2357261-aca5-4a55-9ab2-eeed26731821" name="工作经历" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8701b3e5-0ada-402e-a302-a77784ccccfd" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="91d0dfa2-486c-4088-be9b-b1b3341a9074" name="项目经历" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d7697aa3-fe3d-412a-a8f8-d7f1e6bfae37" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e4877195-c539-4765-a157-5723dd5bccb2" name="基本信息" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f78809ab-a2bf-4e22-a24c-afcd61412aaf" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="6299c813-9d04-4b59-af11-dec61194ae5b" name="我的技能" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f03b6324-0b8e-410e-a32b-05d455912fc7" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="2694963f-9008-456c-9c98-d7e3eb1c46e6" name="财务状况" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2841c9fa-30fe-4790-85e4-d1681a8eb046" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e3f1e661-edbf-445d-8aef-7329b20b57f4" name="我的心情" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="56e030b3-0f3b-4b89-9dae-7c63578d443d" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="acb43f30-170e-4489-90d8-fab5d4335636" name="我的著作" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f2f783d1-6811-413c-aa25-e068d88b4182" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="f7a2a142-2484-4470-8d23-5ff1e09baa70" name="我的文章" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4953ef1f-c81d-451c-9142-df9bbea1d7fb" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="6f76e351-265a-4b99-b70e-31489b2938d2" name="我的产品" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a50933dc-dc82-45c0-a090-77803948fe97" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="c8bc8995-425f-4716-b69f-dc0018e313df" name="SmartAdminModel">
+    <elementDefinition Id="b11cf0ab-b27b-496f-8bdf-6115aa05cb5b" />
+  </package>
+</useCaseModelRoot>
