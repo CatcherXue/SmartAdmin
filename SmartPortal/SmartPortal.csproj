@@ -140,6 +140,7 @@
     <Content Include="Content\js\jquery.wysiwyg.min.js" />
     <Content Include="Content\js\swfobject.js" />
     <Content Include="Global.asax" />
+    <Content Include="SmartPortal.Publish.xml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -186,6 +187,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -196,6 +200,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartAdmin\SmartAdmin.csproj">
+      <Project>{D6E561E0-04BF-4147-9D6B-0FFE768104BE}</Project>
+      <Name>SmartAdmin</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace SmartAdmin.Controllers
+namespace Smart.Admin.Controllers
 {
     public class UserController : Controller
     {
