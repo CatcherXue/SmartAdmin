@@ -3,3 +3,11 @@ G:\GitHub\SmartAdmin\SmartAdmin\bin\SmartAdmin.pdb
 G:\GitHub\SmartAdmin\SmartAdmin\obj\Debug\ResolveAssemblyReference.cache
 G:\GitHub\SmartAdmin\SmartAdmin\obj\Debug\SmartAdmin.dll
 G:\GitHub\SmartAdmin\SmartAdmin\obj\Debug\SmartAdmin.pdb
+D:\wwwroot\Smart\SmartAdmin\bin\Smart.Admin.dll
+D:\wwwroot\Smart\SmartAdmin\bin\Smart.Admin.pdb
+D:\wwwroot\Smart\SmartAdmin\obj\Debug\Smart.Admin.dll
+D:\wwwroot\Smart\SmartAdmin\obj\Debug\Smart.Admin.pdb
+E:\GitHub\SmartAdmin\SmartAdmin\bin\Smart.Admin.dll
+E:\GitHub\SmartAdmin\SmartAdmin\bin\Smart.Admin.pdb
+E:\GitHub\SmartAdmin\SmartAdmin\obj\Debug\Smart.Admin.dll
+E:\GitHub\SmartAdmin\SmartAdmin\obj\Debug\Smart.Admin.pdb
