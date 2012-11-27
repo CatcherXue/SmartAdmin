@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile>2012-11-27T12:15:48.7834148+08:00</TimeStampOfAssociatedLegacyPublishXmlFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Smart.Admin.dll">
+      <publishTime>11/27/2012 12:19:18</publishTime>
+    </File>
+    <File Include="bin/Smart.Admin.pdb">
+      <publishTime>11/26/2012 22:28:26</publishTime>
+    </File>
+    <File Include="bin/Smart.Portal.dll">
+      <publishTime>11/27/2012 12:19:19</publishTime>
+    </File>
+    <File Include="bin/Smart.Portal.pdb">
+      <publishTime>11/26/2012 22:28:27</publishTime>
+    </File>
+    <File Include="Content/css/custom.css">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/css/style.css">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/accept.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/add.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/arrows-ffffff.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/book.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/btn-overlay.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/cancel.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/datatable/back_disabled.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/datatable/back_enabled.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/datatable/forward_disabled.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/datatable/forward_enabled.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/datatable/sort_asc.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/datatable/sort_asc_disabled.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/datatable/sort_both.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/datatable/sort_desc.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/datatable/sort_desc_disabled.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/delete.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/error.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/exclamation.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/favicons/apple.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/favicons/favicon.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/gallery/book01.jpg">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/gallery/card01.jpg">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/gallery/leaflet01.jpg">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/help.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/ie-notice.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/information.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/jquery.wysiwyg.gif">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/key.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/logo.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/nyro/ajaxLoader.gif">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/nyro/close.gif">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/nyro/next.gif">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/nyro/prev.gif">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/page_save.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/page_white_go.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/preview-not-available.gif">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/quote.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/search.gif">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/shadow.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/style.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/tag-bg.gif">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/toggle-small-expand.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/toggle.gif">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/user_32.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/img/valid.gif">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/js/administry.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/js/flot/jquery.flot.min.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/js/flot/jquery.flot.selection.min.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/js/jquery-1.4.2.min.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/js/jquery.dataTables.min.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/js/jquery.nyroModal.pack.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/js/jquery.sparkline.min.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/js/jquery.superfish.min.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/js/jquery.supersubs.min.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/js/jquery.tagInput.min.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/js/jquery.tipTip.min.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/js/jquery.ui.core.min.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/js/jquery.ui.tabs.min.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/js/jquery.ui.widget.min.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/js/jquery.validate_pack.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/js/jquery.wysiwyg.min.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/js/swfobject.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_flat_75_ffffff_40x100.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_75_dadada_1x400.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_222222_256x240.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_2e83ff_256x240.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_454545_256x240.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_888888_256x240.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery-ui.css">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>11/26/2012 17:51:05</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.4.4-vsdoc.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.4.4.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.4.4.min.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui.min.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.min.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate-vsdoc.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Scripts/MicrosoftAjax.debug.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Scripts/MicrosoftAjax.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Scripts/MicrosoftMvcAjax.debug.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Scripts/MicrosoftMvcAjax.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Scripts/MicrosoftMvcValidation.debug.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Scripts/MicrosoftMvcValidation.js">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="SmartPortal.Publish.xml">
+      <publishTime>11/27/2012 12:15:48</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>11/27/2012 12:20:11</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>11/27/2012 12:18:18</publishTime>
+    </File>
+    <File Include="Views/Shared/_Menu.cshtml">
+      <publishTime>11/22/2012 17:37:14</publishTime>
+    </File>
+    <File Include="Views/Shared/_UserInfo.cshtml">
+      <publishTime>11/22/2012 17:37:14</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>11/21/2012 09:03:58</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/27/2012 12:35:02</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -23,14 +23,15 @@
 6.安全设置	/Security	配置数据库、FTP等账号设置，以及网站文件安全扫描等功能。
 7.更新维护	/Update		提供建库、升级建库、补丁脚本、安全程序补丁更新维护功能。
 8.开放平台	/Interface	提供第三方调用API接口功能，用于第三方采集器连接、自动发布等。
+9.系统设置	/System		提供系统安装、维护等功能。
 
 页面地址
 xxx.com/Admin/	根地址
-Admin/Install	安装向导
-Admin/Login	用户登录
-Admin/Register	注册用户
-Admin/Index	默认后台
-Admin/VerificationCode	返回一张验证码图片,字符存放在Session中，键名是VerificationCode,有效域是/admin/*。
+System/Install	安装向导
+System/Login	用户登录
+System/Register	注册用户
+System/Index	默认后台
+System/VerificationCode	返回一张验证码图片,字符存放在Session中，键名是VerificationCode,有效域是/admin/*。
 
 默认约定：
 1.使用Cookie授权,有效期7天。

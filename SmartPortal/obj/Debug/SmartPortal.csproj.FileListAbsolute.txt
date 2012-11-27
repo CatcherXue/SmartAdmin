@@ -4,5 +4,8 @@ D:\wwwroot\Smart\SmartPortal\obj\Debug\Smart.Portal.dll
 D:\wwwroot\Smart\SmartPortal\obj\Debug\Smart.Portal.pdb
 E:\GitHub\SmartAdmin\SmartPortal\bin\Smart.Portal.dll
 E:\GitHub\SmartAdmin\SmartPortal\bin\Smart.Portal.pdb
+E:\GitHub\SmartAdmin\SmartPortal\bin\Smart.Admin.dll
+E:\GitHub\SmartAdmin\SmartPortal\bin\Smart.Admin.pdb
+E:\GitHub\SmartAdmin\SmartPortal\obj\Debug\SmartPortal.csprojResolveAssemblyReference.cache
 E:\GitHub\SmartAdmin\SmartPortal\obj\Debug\Smart.Portal.dll
 E:\GitHub\SmartAdmin\SmartPortal\obj\Debug\Smart.Portal.pdb

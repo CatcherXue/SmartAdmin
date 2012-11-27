@@ -3,3 +3,10 @@ G:\GitHub\SmartAdmin\SmartPortal\bin\Smart.Portal.pdb
 G:\GitHub\SmartAdmin\SmartPortal\obj\Release\ResolveAssemblyReference.cache
 G:\GitHub\SmartAdmin\SmartPortal\obj\Release\Smart.Portal.dll
 G:\GitHub\SmartAdmin\SmartPortal\obj\Release\Smart.Portal.pdb
+E:\GitHub\SmartAdmin\SmartPortal\bin\Smart.Portal.dll
+E:\GitHub\SmartAdmin\SmartPortal\bin\Smart.Portal.pdb
+E:\GitHub\SmartAdmin\SmartPortal\bin\Smart.Admin.dll
+E:\GitHub\SmartAdmin\SmartPortal\bin\Smart.Admin.pdb
+E:\GitHub\SmartAdmin\SmartPortal\obj\Release\SmartPortal.csprojResolveAssemblyReference.cache
+E:\GitHub\SmartAdmin\SmartPortal\obj\Release\Smart.Portal.dll
+E:\GitHub\SmartAdmin\SmartPortal\obj\Release\Smart.Portal.pdb
