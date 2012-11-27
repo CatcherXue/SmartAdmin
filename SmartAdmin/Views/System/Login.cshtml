@@ -1,16 +1,198 @@
 ﻿@{
     Layout = null;
 }
-
 <!DOCTYPE html>
-
 <html>
 <head>
-    <title>用户登录</title>
+    <meta charset="utf-8" />
+    <title>用户登录 - 网站后台管理系统V1.0.1</title>
+    <meta name="description" content="网站后台管理系统登录页面" />
+    <meta name="keywords" content="网站后台" />
+    <!-- Favicons -->
+    <link rel="shortcut icon" type="image/png" href="@Url.Content("~/content/img/favicons/favicon.png")" />
+    <link rel="icon" type="image/png" href="@Url.Content("~/content/img/favicons/favicon.png")" />
+    <link rel="apple-touch-icon" href="@Url.Content("~/content/img/favicons/apple.png")" />
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="@Url.Content("~/content/css/style.css")" type="text/css" />
+
+    <!-- Your Custom Stylesheet -->
+    <link rel="stylesheet" href="@Url.Content("~/content/css/custom.css")" type="text/css" />
+    <!--swfobject - needed only if you require <video> tag support for older browsers -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/swfobject.js")"></script>
+    <!-- jQuery with plugins -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery-1.4.2.min.js")"></script>
+
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.ui.core.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.ui.widget.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.ui.tabs.min.js")"></script>
+    <!-- jQuery tooltips -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.tipTip.min.js")"></script>
+    <!-- Superfish navigation -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.superfish.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.supersubs.min.js")"></script>
+    <!-- jQuery form validation -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.validate_pack.js")"></script>
+    <!-- jQuery popup box -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.nyroModal.pack.js")"></script>
+    <!-- Internet Explorer Fixes -->
+    <!--[if IE]>
+		<link rel="stylesheet" type="text/css" media="all" href="css/ie.css"/>
+		<script src="js/html5.js"></script>
+		<![endif]-->
+    <!--Upgrade MSIE5.5-7 to be compatible with MSIE8: http://ie7-js.googlecode.com/svn/version/2.1(beta3)/IE8.js -->
+    <!--[if lt IE 8]>
+		<script src="js/IE8.js"></script>
+		<![endif]-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            /* setup navigation, content boxes, etc... */
+            Administry.setup();
+
+            // validate signup form on keyup and submit
+            var validator = $("#loginform").validate({
+                rules: {
+                    username: "required",
+                    password: "required",
+                    code: "required"
+                },
+                messages: {
+                    username: "请输入用户账号",
+                    password: "请输入账户密码",
+                    code:"请输入验证码"
+                },
+                // the errorPlacement has to take the layout into account
+                errorPlacement: function (error, element) {
+                    error.insertAfter(element.parent().find('label:first'));
+                },
+                // set new class to error-labels to indicate valid fields
+                success: function (label) {
+                    // set &nbsp; as text for IE
+                    label.html("&nbsp;").addClass("ok");
+                }
+            });
+
+        });
+    </script>
 </head>
 <body>
-    <div>
-        用户登录
+
+    <!-- Header -->
+    <header id="top">
+        <div class="wrapper-login">
+            <!-- Title/Logo - can use text instead of image -->
+            <div id="title">
+                <img src="@Url.Content("~/content/img/logo.png")" alt="Administry" />
+            </div>
+            <!-- Main navigation -->
+            <nav id="menu">
+                <ul class="sf-menu">
+                    <li class="current">
+                        <a href="#">登录</a>
+                    </li>
+                    <!--
+                    <li>
+                        <a href="#">注册</a>
+                    </li>-->
+                </ul>
+            </nav>
+            <!-- End of Main navigation -->
+            <!-- Aside links -->
+            <aside>
+                <b>简体中文</b><!-- &middot; <a href="#">English</a>-->
+            </aside>
+            <!-- End of Aside links -->
+        </div>
+    </header>
+    <!-- End of Header -->
+    <!-- Page title -->
+    <div id="pagetitle">
+        <div class="wrapper-login"></div>
     </div>
+    <!-- End of Page title -->
+
+    <!-- Page content -->
+    <div id="page">
+        <!-- Wrapper -->
+        <div class="wrapper-login">
+            <!-- Login form -->
+            <section class="full">
+
+                <h3>登录</h3>
+
+                <div class="box box-info">
+                    请输入用户名和密码登录系统。
+                </div>
+
+                <form id="loginform" method="post" action="@Url.Content("~/System/Login")">
+
+                    <p>
+                        <label class="required" for="username">用户名:</label>
+                        <br />
+                        <input type="text" id="username" class="full" value="" name="username" />
+                    </p>
+
+                    <p>
+                        <label class="required" for="password">密码:</label>
+                        <br />
+                        <input type="password" id="password" class="full" value="" name="password" />
+                    </p>
+
+                    <p>
+                        <label class="required" for="password">验证码:</label>
+                        <br />
+                        <input type="text" id="code" name="code" class="full" value="" style="width:100px; height:15px;" maxlength="4"  />
+                        <img src="@Url.Content(string.Format("~/System/VerificationCode?r={0}",new Random().Next(99999).ToString()))" 
+                            alt="验证码" style="width:100px; height:15px;" />
+                    </p>
+
+                    <p>
+                        <input type="checkbox" id="remember" class="" value="1" name="remember" />
+                        <label class="choice" for="remember">记住登录?</label>
+                    </p>
+
+                    <p>
+                        <input type="submit" class="btn btn-green big" value="登录" />
+                        &nbsp; <a href="#" onclick="$('#emailform').slideDown(); return false;">忘记密码?</a> 或 <a href="#">需要帮助?</a>
+                    </p>
+                    <div class="clear">
+                        &nbsp;
+                    </div>
+
+                </form>
+
+                <form id="emailform" style="display: none" method="post" action="#">
+                    <div class="box">
+                        <p id="emailinput">
+                            <label for="email">电子邮件:</label>
+                            <br />
+                            <input type="text" id="email" class="full" value="" name="email" />
+                        </p>
+                        <p>
+                            <input type="submit" class="btn" value="发送" />
+                        </p>
+                    </div>
+                </form>
+
+            </section>
+            <!-- End of login form -->
+
+        </div>
+        <!-- End of Wrapper -->
+    </div>
+    <!-- End of Page content -->
+
+    <!-- Page footer -->
+    <footer id="bottom">
+        <div class="wrapper-login">
+            <p>
+                Copyright &copy; 2012 <b><a href="#" title="">SmartAdmin</a></b>
+            </p>
+        </div>
+    </footer>
+    <!-- End of Page footer -->
+
+    <!-- User interface javascript load -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/administry.js")"></script>
 </body>
 </html>

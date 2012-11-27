@@ -38,11 +38,18 @@ namespace Smart.Admin.Controllers
         /// <param name="username">用户名</param>
         /// <param name="password">登录密码</param>
         /// <param name="code">验证码</param>
+        /// <param name="remember">保存用户名到Cookie中</param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult Login(string username, string password, string code)
+        public ActionResult Login(string username, string password, string code, string remember)
         {
-            return View();
+            //保存用户名到Cookie
+            if (remember == "1")
+            {
+                Response.Cookies.Add(new HttpCookie("username", username));
+            }
+            //登录成功后,跳转到文章管理模块
+            return RedirectToAction("Index", "Article");
         }
                 
         /// <summary>
@@ -60,6 +67,7 @@ namespace Smart.Admin.Controllers
         /// </summary>
         /// <param name="username">用户名</param>
         /// <returns></returns>
+        [HttpPost]
         [HttpGet]
         public ActionResult LoginOut(string username)
         {
