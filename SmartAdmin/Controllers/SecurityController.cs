@@ -10,6 +10,8 @@ namespace Smart.Admin.Controllers
     /// 安全设置
     /// 配置数据库、FTP等账号设置，以及网站文件安全扫描等功能。
     /// </summary>
+    [Filter.DefaultAuthorizationFilter]
+    [Filter.DefaultLoggerActionFilter]
     public class SecurityController : Controller
     {
         //

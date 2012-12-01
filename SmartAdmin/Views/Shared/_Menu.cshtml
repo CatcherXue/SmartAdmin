@@ -1,24 +1,54 @@
 ﻿@{
     Layout = null;
 }
-<!-- Main navigation -->
+@{
+    string url = Request.Url.AbsoluteUri;
+    string className = "class=\"current\"";    
+}
+<!-- 主菜单导航 -->
 <nav id="menu">
     <ul class="sf-menu">
-        <li><a href="dashboard.html">Dashboard</a> </li>
-        <li><a href="styles.html">Styles</a>
+        <!--门户网站后台基础应用模块-->
+        <li @if (url.Contains("Article/"))
+            { @Html.Raw(className);
+            }><a href="@Url.Content("~/Article/Index")">文章管理</a></li>
+        <li @if (url.Contains("Product/"))
+            { @Html.Raw(className);
+            }><a href="@Url.Content("~/Product/Index")">产品管理</a></li>
+        <li @if (url.Contains("Picture/"))
+            { @Html.Raw(className);
+            }><a href="@Url.Content("~/Picture/Index")">图片管理</a></li>
+        <li @if (url.Contains("Attachment/"))
+            { @Html.Raw(className);
+            }><a href="@Url.Content("~/Attachment/Index")">附件管理</a></li>
+        <li @if (url.Contains("LeaveMessage/"))
+            { @Html.Raw(className);
+            }><a href="@Url.Content("~/LeaveMessage/Index")">留言管理</a></li>
+        <li @if (url.Contains("Contact/"))
+            { @Html.Raw(className);
+            }><a href="@Url.Content("~/Contact/Index")">联系方式</a></li>
+        <li @if (url.Contains("Link/"))
+            { @Html.Raw(className);
+            }><a href="@Url.Content("~/Link/Index")">友情链接</a></li>
+        <!--门户网站后台基础应用模块结束-->
+        <!--门户网站后台基础管理模块-->
+        <li @if (url.Contains("System/") || url.Contains("Configuration/") || url.Contains("Backup/") || url.Contains("Logger/") ||
+                url.Contains("Analysis/") || url.Contains("Security/") || url.Contains("Update/") || url.Contains("Interface/"))
+            { @Html.Raw(className);
+            }><a href="@Url.Content("~/System/Index")">系统管理</a>
             <ul>
-                <li><a href="styles.html">Basic Styles</a> </li>
-                <li><a href="#">Sample Pages...</a>
-                    <ul>
-                        <li><a href="samples-files.html">Files</a> </li>
-                        <li><a href="samples-products.html">Products</a> </li>
-                    </ul>
-                </li>
+                <li><a href="@Url.Content("~/Configuration/Index")">网站设置</a></li>
+                <li><a href="@Url.Content("~/Backup/Index")">备份恢复</a></li>
+                <li><a href="@Url.Content("~/User/Index")">用户管理</a></li>
+                <li><a href="@Url.Content("~/Logger/Index")">日志管理</a></li>
+                <li><a href="@Url.Content("~/Analysis/Index")">访客分析</a></li>
+                <li><a href="@Url.Content("~/Security/Index")">安全设置</a></li>
+                <li><a href="@Url.Content("~/Update/Index")">更新维护</a></li>
+                <li><a href="@Url.Content("~/Interface/Index")">开放平台</a></li>
+                <li><a href="@Url.Content("~/System/Index")">系统设置</a></li>
             </ul>
         </li>
-        <li><a href="tables.html">Tables</a> </li>
-        <li class="current"><a href="forms.html">Forms</a> </li>
-        <li><a href="graphs.html">Graphs</a> </li>
+        <!--门户网站后台基础管理模块结束-->
     </ul>
 </nav>
-<!-- End of Main navigation -->
+<!-- 主菜单导航结束 -->

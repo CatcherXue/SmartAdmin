@@ -9,6 +9,8 @@ namespace Smart.Admin.Controllers
     /// <summary>
     /// 门户基础模块:联系方式
     /// </summary>
+    [Filter.DefaultAuthorizationFilter]
+    [Filter.DefaultLoggerActionFilter]
     public class ContactController : Controller
     {
         //

@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "产品管理";
+}
+<!-- Page title -->
+<div id="pagetitle">
+    <div class="wrapper">
+        <h1>产品管理 &rarr; <span>主页</span></h1>
+        <!-- Quick search box -->
+        <form action="" method="get">
+            <input class="" type="text" id="q" name="q" value="请输入搜索关键字"/>
+        </form>
+    </div>
+</div>
+<!-- End of Page title -->
+<!-- Page content -->
+<div id="page">
+    <!-- Wrapper -->
+    <div class="wrapper">
+        <!-- 左边分部小节开始 -->
+        <section class="column width6 first">
+            <h3>功能简介</h3>
+            <div class="box box-info">
+                提供展示公司相关产品信息的功能。
+            </div>
+            <form id="sampleform" method="post" action="#">
+                
+            </form>
+        </section>
+        <!-- 左边分部小节结束 -->
+
+
+        <!-- 右边分部小节开始 -->
+        <aside class="column width2">
+            <div id="rightmenu">
+                <header>
+                    <h3>快捷操作</h3>
+                </header>
+                <dl class="first">
+                    <dt>
+                        <img width="16" height="16" alt="Basic styles" src="@Url.Content("~/Content/img/style.png")">
+                    </dt>
+                    <dd>
+                        <a href="#">基础样式</a>
+                    </dd>
+                    <dd class="last">
+                        这里是一段描述文字信息。
+                    </dd>
+                </dl>
+            </div>
+            <div class="content-box">
+                <header>
+                    <h3>便捷信息</h3>
+                </header>
+                <section>
+                    <q>这里描述一段实用的便捷描述文字信息。
+                    <cite>w3schools.com</cite></q>
+                </section>
+            </div>
+        </aside>
+        <!-- 右边分部小节结束 -->
+    </div>
+    <!-- End of Wrapper -->
+</div>
+<!-- End of Page content -->

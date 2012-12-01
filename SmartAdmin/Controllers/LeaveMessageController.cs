@@ -9,6 +9,8 @@ namespace Smart.Admin.Controllers
     /// <summary>
     /// 门户基础模块:留言管理
     /// </summary>
+    [Filter.DefaultAuthorizationFilter]
+    [Filter.DefaultLoggerActionFilter]
     public class LeaveMessageController : Controller
     {
         //

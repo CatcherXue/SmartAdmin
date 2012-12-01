@@ -9,6 +9,8 @@ namespace Smart.Admin.Controllers
     /// <summary>
     /// 门户基础模块:链接管理
     /// </summary>
+    [Filter.DefaultAuthorizationFilter]
+    [Filter.DefaultLoggerActionFilter]
     public class LinkController : Controller
     {
         //

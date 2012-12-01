@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <meta charset="utf-8" />
-    <title>@ViewBag.Title</title>
+    <title>@ViewBag.Title - 网站后台管理系统V1.0</title>
     <meta name="description" content="@ViewBag.Description" />
     <meta name="keywords" content="@ViewBag.Keywords" />
     <!-- Favicons -->
@@ -38,6 +38,14 @@
     <script type="text/javascript" src="@Url.Content("~/Content/js/jquery.nyroModal.pack.js")"></script>
     <!-- jQuery form validation -->
     <script type="text/javascript" src="@Url.Content("~/Content/js/jquery.validate_pack.js")"></script>
+    <!-- jQuery tag input -->
+    <script type="text/javascript" src="@Url.Content("~/Content/js/jquery.tagInput.min.js")"></script>
+    <!-- jQuery wysiwyg editor -->
+    <script type="text/javascript" src="@Url.Content("~/Content/js/jquery.wysiwyg.min.js")"></script>
+    <!-- jQuery popup box -->
+    <script type="text/javascript" src="@Url.Content("~/Content/js/jquery.nyroModal.pack.js")"></script>
+    <!-- jQuery data tables -->
+    <script type="text/javascript" src="@Url.Content("~/Content/js/jquery.dataTables.min.js")"></script>
     <!-- Internet Explorer Fixes -->
     <!--[if IE]>
 		<link rel="stylesheet" type="text/css" media="all" href="css/ie.css"/>
@@ -47,87 +55,9 @@
     <!--[if lt IE 8]>
 		<script src="js/IE8.js"></script>
 		<![endif]-->
-    <script type="text/javascript">
-        $(document).ready(function () {
-
-            /* setup navigation, content boxes, etc... */
+    <script type="text/javascript" lang="zh-cn">
+        $(function () {
             Administry.setup();
-
-            /* progress bar animations - setting initial values */
-            Administry.progress("#progress1", 1, 6);
-
-            // validate form on keyup and submit
-            var validator = $("#sampleform").validate({
-                rules: {
-                    firstname: "required",
-                    lastname: "required",
-                    username: {
-                        required: true,
-                        minlength: 2
-                    },
-                    password: {
-                        required: true,
-                        minlength: 5
-                    },
-                    password_confirm: {
-                        required: true,
-                        minlength: 5,
-                        equalTo: "#password"
-                    },
-                    email: {
-                        required: true,
-                        email: true
-                    },
-                    dateformat: "required",
-                    terms: "required"
-                },
-                messages: {
-                    firstname: "Enter your firstname",
-                    lastname: "Enter your lastname",
-                    username: {
-                        required: "Enter a username",
-                        minlength: jQuery.format("Enter at least {0} characters")
-                    },
-                    password: {
-                        required: "Provide a password",
-                        rangelength: jQuery.format("Enter at least {0} characters")
-                    },
-                    password_confirm: {
-                        required: "Repeat your password",
-                        minlength: jQuery.format("Enter at least {0} characters"),
-                        equalTo: "Enter the same password as above"
-                    },
-                    email: {
-                        required: "Please enter a valid email address",
-                        minlength: "Please enter a valid email address"
-                    },
-                    dateformat: "Choose your preferred dateformat",
-                    terms: " "
-                },
-                // the errorPlacement has to take the layout into account
-                errorPlacement: function (error, element) {
-                    error.insertAfter(element.parent().find('label:first'));
-                },
-                // specifying a submitHandler prevents the default submit, good for the demo
-                submitHandler: function () {
-                    alert("Data submitted!");
-                },
-                // set new class to error-labels to indicate valid fields
-                success: function (label) {
-                    // set &nbsp; as text for IE
-                    label.html("&nbsp;").addClass("ok");
-                }
-            });
-
-            // propose username by combining first- and lastname
-            $("#username").focus(function () {
-                var firstname = $("#firstname").val();
-                var lastname = $("#lastname").val();
-                if (firstname && lastname && !this.value) {
-                    this.value = firstname + "." + lastname;
-                }
-            });
-
         });
     </script>
 </head>
@@ -159,13 +89,17 @@
     <footer id="bottom">
         <div class="wrapper">
             <nav>
-					<a href="#">Dashboard</a> &middot; <a href="#">Content</a> &middot; <a href="#">Reports</a> &middot; <a
-                        href="#">Users</a> &middot; <a href="#">Media</a> &middot; <a href="#">Events</a> &middot; <a
-                            href="#">Newsletter</a> &middot; <a href="#">Settings</a>
-				</nav>
+					<a href="@Url.Content("~/Article/Index")">文章管理</a>&middot;
+                    <a href="@Url.Content("~/Product/Index")">产品管理</a>&middot;
+                    <a href="@Url.Content("~/Picture/Index")">图片管理</a>&middot;
+                    <a href="@Url.Content("~/Attachment/Index")">附件管理</a>&middot;
+                    <a href="@Url.Content("~/LeaveMessage/Index")">留言管理</a>&middot;
+                    <a href="@Url.Content("~/Contact/Index")">联系方式</a>&middot;
+                    <a href="@Url.Content("~/Link/Index")">友情链接</a>
+				    </nav>
             <p>
-                Copyright &copy; 2010 <b><a href="http://www.865171.cn" title="www.865171.cn">www.865171.cn</a></b>
-                | Icons by <a href="http://www.865171.cn">865171.cn</a>
+                Copyright &copy; 2012 <b><a href="#" title="网站后台管理系统">网站后台管理系统</a></b> | Icons by
+                <a href="#">SmartBooks</a>
             </p>
         </div>
     </footer>
@@ -173,19 +107,18 @@
     <!-- Animated footer -->
     <footer id="animated">
         <ul>
-            <li><a href="#">Dashboard</a> </li>
-            <li><a href="#">Content</a> </li>
-            <li><a href="#">Reports</a> </li>
-            <li><a href="#">Users</a> </li>
-            <li><a href="#">Media</a> </li>
-            <li><a href="#">Events</a> </li>
-            <li><a href="#">Newsletter</a> </li>
-            <li><a href="#">Settings</a> </li>
+            <li><a href="@Url.Content("~/Article/Index")">文章管理</a></li>
+            <li><a href="@Url.Content("~/Product/Index")">产品管理</a></li>
+            <li><a href="@Url.Content("~/Picture/Index")">图片管理</a></li>
+            <li><a href="@Url.Content("~/Attachment/Index")">附件管理</a></li>
+            <li><a href="@Url.Content("~/LeaveMessage/Index")">留言管理</a></li>
+            <li><a href="@Url.Content("~/Contact/Index")">联系方式</a></li>
+            <li><a href="@Url.Content("~/Link/Index")">友情链接</a></li>
         </ul>
     </footer>
     <!-- End of Animated footer -->
     <!-- Scroll to top link -->
-    <a href="#" id="totop">^ scroll to top</a>
+    <a href="#" id="totop">^滚动到顶部</a>
     <!-- User interface javascript load -->
     <script type="text/javascript" src="@Url.Content("~/Content/js/administry.js")"></script>
 </body>

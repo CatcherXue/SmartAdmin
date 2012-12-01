@@ -9,6 +9,8 @@ namespace Smart.Admin.Controllers
     /// <summary>
     ///  门户基础模块:产品管理
     /// </summary>
+    [Filter.DefaultAuthorizationFilter]
+    [Filter.DefaultLoggerActionFilter]
     public class ProductController : Controller
     {
         //

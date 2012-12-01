@@ -10,6 +10,8 @@ namespace Smart.Admin.Controllers
     /// 用户管理
     /// 网站管理员、职员、会员账户管理。
     /// </summary>
+    [Filter.DefaultAuthorizationFilter]
+    [Filter.DefaultLoggerActionFilter]
     public class UserController : Controller
     {
         //

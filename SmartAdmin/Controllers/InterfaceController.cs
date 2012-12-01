@@ -10,6 +10,8 @@ namespace Smart.Admin.Controllers
     /// 开放接口
     /// 提供第三方调用API接口功能，用于第三方采集器连接、自动发布等。
     /// </summary>
+    [Filter.DefaultAuthorizationFilter]
+    [Filter.DefaultLoggerActionFilter]
     public class InterfaceController : Controller
     {
         //

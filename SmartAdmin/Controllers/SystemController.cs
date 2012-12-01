@@ -10,6 +10,7 @@ namespace Smart.Admin.Controllers
     /// 系统设置
     /// 提供系统安装、维护等功能。
     /// </summary>
+    [Filter.DefaultLoggerActionFilter]
     public class SystemController : Controller
     {
         /// <summary>
@@ -17,9 +18,11 @@ namespace Smart.Admin.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [Filter.DefaultAuthorizationFilter]
         public ActionResult Index()
         {
-            return View("~/Views/System/Login.cshtml");
+            //return View("~/Views/System/Login.cshtml");
+            return View();
         }
 
         /// <summary>
@@ -43,13 +46,17 @@ namespace Smart.Admin.Controllers
         [HttpPost]
         public ActionResult Login(string username, string password, string code, string remember)
         {
-            //保存用户名到Cookie
+            Response.Cookies.Add(new HttpCookie("username", username));
+
+            //一周内免登陆设置
             if (remember == "1")
             {
-                Response.Cookies.Add(new HttpCookie("username", username));
+                //保存用户名
+                Response.Cookies.Add(new HttpCookie("issave", username) { Expires = DateTime.Now.AddDays(7) });
             }
-            //登录成功后,跳转到文章管理模块
-            return RedirectToAction("Index", "Article");
+            
+            //登录成功后,跳转到后台默认主页
+            return RedirectToAction("Index", "System");
         }
                 
         /// <summary>
@@ -67,11 +74,14 @@ namespace Smart.Admin.Controllers
         /// </summary>
         /// <param name="username">用户名</param>
         /// <returns></returns>
-        [HttpPost]
         [HttpGet]
+        [Filter.DefaultAuthorizationFilter]
         public ActionResult LoginOut(string username)
         {
-            return View();
+            Response.Cookies.Add(new HttpCookie("username", ""));
+            //return View("~/Views/System/Login.cshtml");
+
+            return new RedirectResult("~/System/Login", false);
         }
 
         /// <summary>

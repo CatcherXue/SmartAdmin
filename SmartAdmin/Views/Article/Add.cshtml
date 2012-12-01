@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "添加文章";
+}
+<!-- Page title -->
+<div id="pagetitle">
+    <div class="wrapper">
+        <h1>
+            文章管理 &rarr; <span>添加文章</span></h1>
+        <!-- Quick search box -->
+        <form action="" method="get">
+        <input class="" type="text" id="q" name="q" value="请输入搜索关键字" />
+        </form>
+    </div>
+</div>
+<!-- End of Page title -->
+<!-- Page content -->
+<div id="page">
+    <!-- Wrapper -->
+    <div class="wrapper">
+        <!-- 左边分部小节开始 -->
+        <section class="column width6 first">
+            <h3>
+                功能简介</h3>
+            <div class="box box-info">
+                添加一篇新的文章。
+            </div>
+            <form id="article" name="article" method="post" action="@Url.Content("~/Article/Add")">
+            <fieldset>
+                <legend>文章信息</legend>
+                <p>
+                    <label class="required" for="producttitle">
+                        标题</label>
+                    <br />
+                    <input type="text" id="ptitle" class="half title" value="" name="ptitle" />
+                    <small>输入文章标题</small>
+                </p>
+                <p>
+                    <label for="productdesc">
+                        内容</label>
+                    <br />
+                    <textarea id="content" class="large full" name="content"></textarea>
+                </p>
+                <p class="box">
+                    <input type="submit" class="btn btn-green big" value="Save" />
+                    or <a href="#">Cancel</a>
+                </p>
+            </fieldset>
+            </form>
+        </section>
+        <!-- 左边分部小节结束 -->
+        <!-- 右边分部小节开始 -->
+        <aside class="column width2">
+            <div id="rightmenu">
+                <header>
+                    <h3>
+                        快捷操作</h3>
+                </header>
+                <dl class="first">
+                    <dt>
+                        <img width="16" height="16" alt="Basic styles" src="@Url.Content("~/Content/img/style.png")">
+                    </dt>
+                    <dd>
+                        <a href="#">添加文章</a>
+                    </dd>
+                    <dd class="last">
+                        点击链接添加一篇新文章。
+                    </dd>
+                </dl>
+            </div>
+            <div class="content-box">
+                <header>
+                    <h3>
+                        便捷信息</h3>
+                </header>
+                <section>
+                    <q>这里描述一段实用的便捷描述文字信息。 <cite>w3schools.com</cite></q>
+                </section>
+            </div>
+        </aside>
+        <!-- 右边分部小节结束 -->
+    </div>
+    <!-- End of Wrapper -->
+</div>
+<!-- End of Page content -->

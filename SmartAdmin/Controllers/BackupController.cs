@@ -10,6 +10,8 @@ namespace Smart.Admin.Controllers
     /// 备份恢复
     /// 备份恢复数据库。
     /// </summary>
+    [Filter.DefaultAuthorizationFilter]
+    [Filter.DefaultLoggerActionFilter]
     public class BackupController : Controller
     {
         //

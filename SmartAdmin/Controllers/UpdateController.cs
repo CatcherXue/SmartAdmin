@@ -10,6 +10,8 @@ namespace Smart.Admin.Controllers
     /// 更新维护
     /// 提供建库、升级建库、补丁脚本、安全程序补丁更新维护功能。
     /// </summary>
+    [Filter.DefaultAuthorizationFilter]
+    [Filter.DefaultLoggerActionFilter]
     public class UpdateController : Controller
     {
         //

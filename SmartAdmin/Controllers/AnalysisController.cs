@@ -10,6 +10,8 @@ namespace Smart.Admin.Controllers
     /// 访客分析
     /// 分析网站的访客流量、设置第三方统计代码等。
     /// </summary>
+    [Filter.DefaultAuthorizationFilter]
+    [Filter.DefaultLoggerActionFilter]
     public class AnalysisController : Controller
     {
         //

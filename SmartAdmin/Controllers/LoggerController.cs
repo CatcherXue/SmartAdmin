@@ -10,6 +10,8 @@ namespace Smart.Admin.Controllers
     /// 日志管理
     /// 网站访问日志管理。
     /// </summary>
+    [Filter.DefaultAuthorizationFilter]
+    [Filter.DefaultLoggerActionFilter]
     public class LoggerController : Controller
     {
         //
