@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Smart.Admin;
 
 namespace Smart.Admin.Controllers
 {
@@ -13,6 +14,8 @@ namespace Smart.Admin.Controllers
     [Filter.DefaultLoggerActionFilter]
     public class SystemController : Controller
     {
+        Models.SmartAdminDB smartAdminDB = new Models.SmartAdminDB();
+
         /// <summary>
         /// 默认页面，如果系统未安装跳转到登录页面；如果用户未登录，跳转到登录页面。
         /// </summary>
@@ -21,6 +24,30 @@ namespace Smart.Admin.Controllers
         [Filter.DefaultAuthorizationFilter]
         public ActionResult Index()
         {
+            //添加一条测试数据
+            Models.User user = new Models.User();
+            user.CurrentIPAddress = Request.UserHostAddress;
+            user.EmailAddress = "smartbooks@qq.com";
+            user.EndLoginDate = DateTime.Now;
+            user.MutileOnLine = false;
+            user.Nick = "飞翔的小鸟";
+            user.OnLine = false;
+            user.Password = "123456789";
+            user.RegisterDate = DateTime.Now;
+            user.UserName = new Random().Next(999999).ToString();
+            user.UserRole = "超级管理员";
+
+            smartAdminDB.Users.Add(user);
+
+            smartAdminDB.SaveChanges();
+
+            var data = from u in smartAdminDB.Users
+                       //where u.UserName == user.UserName
+                       orderby u.RegisterDate descending
+                       select u;
+            
+            ViewBag.Data = data;
+            
             //return View("~/Views/System/Login.cshtml");
             return View();
         }

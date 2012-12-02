@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Data.Entity;
+using System.Configuration;
 
 namespace Smart.Admin
 {
@@ -30,6 +32,12 @@ namespace Smart.Admin
 
         protected void Application_Start()
         {
+            //无论是否存在都初始化
+            //Database.SetInitializer(new DropCreateDatabaseAlways<Smart.Admin.Models.SmartAdminDB>());
+            //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Smart.Admin.Models.SmartAdminDB>());
+            //数据部不存在时初始化
+            //Database.SetInitializer(new CreateDatabaseIfNotExists<Smart.Admin.Models.SmartAdminDB>());
+
             AreaRegistration.RegisterAllAreas();
 
             RegisterGlobalFilters(GlobalFilters.Filters);
