@@ -1,8 +1,1 @@
-﻿2012-12-03 13:10:39	IE	::1	http://localhost:57426/System/Login
-2012-12-03 13:10:42	IE	::1	http://localhost:57426/System/VerificationCode?r=55445
-2012-12-03 13:11:00	Chrome	::1	http://localhost:57426/System/Login
-2012-12-03 13:11:00	Chrome	::1	http://localhost:57426/System/VerificationCode?r=64959
-2012-12-03 13:11:05	Chrome	::1	http://localhost:57426/System/Login
-2012-12-03 13:11:05	Chrome	::1	http://localhost:57426/
-2012-12-03 13:11:10	Chrome	::1	http://localhost:57426/Contact/Index
-2012-12-03 13:11:10	Chrome	::1	http://localhost:57426/System/Index
+﻿
