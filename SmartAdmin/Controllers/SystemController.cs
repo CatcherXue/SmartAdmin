@@ -25,6 +25,7 @@ namespace Smart.Admin.Controllers
         public ActionResult Index()
         {
             //添加一条测试数据
+            /*
             Models.User user = new Models.User();
             user.CurrentIPAddress = Request.UserHostAddress;
             user.EmailAddress = "smartbooks@qq.com";
@@ -47,7 +48,7 @@ namespace Smart.Admin.Controllers
                        select u;
             
             ViewBag.Data = data;
-            
+            */
             //return View("~/Views/System/Login.cshtml");
             return View();
         }

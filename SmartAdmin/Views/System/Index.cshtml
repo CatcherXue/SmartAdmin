@@ -23,10 +23,12 @@
                 提供查看网站整体运行情况信息功能。
             </div>
             <form id="sampleform" method="post" action="#">
+                @*
                 @foreach (var m in ViewBag.Data)
                 {
                     <p>@m.UserName,@m.Nick,@m.UserRole,@m.CurrentIPAddress,@m.MutileOnLine,@m.RegisterDate</p>
                 }
+                *@
             </form>
         </section>
         <!-- 左边分部小节结束 -->
