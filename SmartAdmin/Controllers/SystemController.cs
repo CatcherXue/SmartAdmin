@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Smart.Admin;
+using System.Drawing;
 
 namespace Smart.Admin.Controllers
 {
@@ -25,6 +26,7 @@ namespace Smart.Admin.Controllers
         public ActionResult Index()
         {
             //添加一条测试数据
+            /*
             Models.User user = new Models.User();
             user.CurrentIPAddress = Request.UserHostAddress;
             user.EmailAddress = "smartbooks@qq.com";
@@ -47,7 +49,7 @@ namespace Smart.Admin.Controllers
                        select u;
             
             ViewBag.Data = data;
-            
+            */
             //return View("~/Views/System/Login.cshtml");
             return View();
         }
@@ -73,19 +75,32 @@ namespace Smart.Admin.Controllers
         [HttpPost]
         public ActionResult Login(string username, string password, string code, string remember)
         {
-            Response.Cookies.Add(new HttpCookie("username", username));
+            //校验验证码
+            if (Session["validatecode"] == null || Session["validatecode"].ToString() != code)
+            {
+                //校验失败,返回登录页面
+                ViewBag.Message = "验证码错误。";
+                return View("~/Views/System/Login.cshtml");
+            }
+
+            //校验用户名和密码
+
+            //校验通过
 
             //一周内免登陆设置
             if (remember == "1")
             {
-                //保存用户名
-                Response.Cookies.Add(new HttpCookie("issave", username) { Expires = DateTime.Now.AddDays(7) });
+                Response.Cookies.Add(new HttpCookie("username", username) { Expires = DateTime.Now.AddDays(7) });
             }
-            
+            else
+            {
+                Response.Cookies.Add(new HttpCookie("username", username));
+            }
+
             //登录成功后,跳转到后台默认主页
             return RedirectToAction("Index", "System");
         }
-                
+
         /// <summary>
         /// 登录页面
         /// </summary>
@@ -116,9 +131,41 @@ namespace Smart.Admin.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public ActionResult VerificationCode()
+        public void VerificationCode()
         {
-            return View();
+            //构造验证码图片
+            Smart.Utility.ValidateCode validateCode = new Utility.ValidateCode();
+            validateCode.Border = true;
+            validateCode.BorderColor = Color.Red;
+            validateCode.BorderWidth = 1;
+            validateCode.Chaos = true;
+            validateCode.Colors = new Color[] { Color.Red, Color.Gray, Color.Blue, Color.Beige };
+            validateCode.FontSize = 13;
+            validateCode.Length = 4;
+            validateCode.Padding = 1;
+
+            //生成随机数字
+            Random rd = new Random();
+            string codeText = string.Format("{0}{1}{2}{3}",
+                rd.Next(0, 9).ToString(),
+                rd.Next(0, 9).ToString(),
+                rd.Next(0, 9).ToString(),
+                rd.Next(0, 9).ToString());
+
+            //验证码文本加入Session
+            this.Session["validatecode"] = codeText;
+
+            //向客户端返回一张验证码图片
+            Bitmap image = validateCode.CreateImageCode(codeText);
+            System.IO.MemoryStream ms = new System.IO.MemoryStream();
+            image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+            this.Response.ClearContent();
+            this.Response.ContentType = "image/png";
+            this.Response.BinaryWrite(ms.GetBuffer());
+            ms.Close();
+            ms = null;
+            image.Dispose();
+            image = null;
         }
     }
 }

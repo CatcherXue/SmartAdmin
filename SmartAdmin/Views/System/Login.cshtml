@@ -59,7 +59,7 @@
                 messages: {
                     username: "请输入用户账号",
                     password: "请输入账户密码",
-                    code:"请输入验证码"
+                    code: "请输入验证码"
                 },
                 // the errorPlacement has to take the layout into account
                 errorPlacement: function (error, element) {
@@ -72,6 +72,11 @@
                 }
             });
 
+            /*单击验证码图片自动更换*/
+            $("#VerificationCode").click(function () {
+                var url = "/System/VerificationCode?r=" + Math.random();
+                $(this).attr("src", url);
+            });
         });
     </script>
 </head>
@@ -121,7 +126,14 @@
                 <h3>登录</h3>
 
                 <div class="box box-info">
-                    请输入用户名和密码登录系统。
+                    @if (ViewBag.Message == null || ViewBag.Message == "")
+                    {
+                        <p>请输入用户名和密码登录系统。</p>
+                    }
+                    else
+                    {
+                        <p>@ViewBag.Message</p>
+                    }
                 </div>
 
                 <form id="loginform" method="post" action="@Url.Content("~/System/Login")">
@@ -141,14 +153,16 @@
                     <p>
                         <label class="required" for="password">验证码:</label>
                         <br />
-                        <input type="text" id="code" name="code" class="full" value="" style="width:100px; height:15px;" maxlength="4"  />
-                        <img src="@Url.Content(string.Format("~/System/VerificationCode?r={0}",new Random().Next(99999).ToString()))" 
-                            alt="验证码" style="width:100px; height:15px;" />
+                        <div style="height: 27px; line-height: 27px; vertical-align: central;">
+                            <input type="text" id="code" name="code" class="full" value="" style="width: 100px; float: left;" maxlength="4" />
+                            <img src="@Url.Content(string.Format("~/System/VerificationCode?r={0}", new Random().Next(99999).ToString()))" 
+                            alt="点击刷新图片" style=" margin-left:8px; width:62px; height:27px; float:left; cursor:pointer;" id="VerificationCode" />
+                        </div>
                     </p>
 
                     <p>
                         <input type="checkbox" id="remember" class="" value="1" name="remember" />
-                        <label class="choice" for="remember">记住登录?</label>
+                        <label class="choice" for="remember">记住我一周？</label>
                     </p>
 
                     <p>
