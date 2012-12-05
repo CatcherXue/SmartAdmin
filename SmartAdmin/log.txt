@@ -1,1 +1,9 @@
-﻿
+﻿2012-12-05 12:33:30	IE	::1	http://localhost:57426/System/Login
+2012-12-05 12:33:31	IE	::1	http://localhost:57426/System/VerificationCode?r=79285
+2012-12-05 12:33:42	Chrome	::1	http://localhost:57426/System/Login
+2012-12-05 12:33:42	Chrome	::1	http://localhost:57426/System/VerificationCode?r=53774
+2012-12-05 12:33:47	Chrome	::1	http://localhost:57426/System/VerificationCode?r=0.4009722121991217
+2012-12-05 12:33:47	Chrome	::1	http://localhost:57426/System/VerificationCode?r=0.47072562645189464
+2012-12-05 12:33:47	Chrome	::1	http://localhost:57426/System/VerificationCode?r=0.29884095932357013
+2012-12-05 12:33:47	Chrome	::1	http://localhost:57426/System/VerificationCode?r=0.15849885251373053
+2012-12-05 12:33:47	Chrome	::1	http://localhost:57426/System/VerificationCode?r=0.5296161840669811

@@ -1,0 +1,4 @@
+E:\GitHub\SmartAdmin\SmartAdmin\bin\Smart.Admin.dll
+E:\GitHub\SmartAdmin\SmartAdmin\bin\Smart.Admin.pdb
+E:\GitHub\SmartAdmin\SmartAdmin\obj\Debug\Smart.Admin.dll
+E:\GitHub\SmartAdmin\SmartAdmin\obj\Debug\Smart.Admin.pdb
