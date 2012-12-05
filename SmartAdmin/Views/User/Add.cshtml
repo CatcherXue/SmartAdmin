@@ -1,10 +1,12 @@
-﻿@{
-    ViewBag.Title = "用户管理";
+﻿@model Smart.Admin.Models.User
+@{
+    ViewBag.Title = "添加用户";
 }
+
 <!-- Page title -->
 <div id="pagetitle">
     <div class="wrapper">
-        <h1>系统管理 &rarr; <span>用户管理</span></h1>
+        <h1>用户管理 &rarr; <span>添加用户</span></h1>
         <!-- Quick search box -->
         <form action="" method="get">
             <input class="" type="text" id="q" name="q" value="请输入搜索关键字" />
@@ -20,24 +22,36 @@
         <section class="column width6 first">
             <h3>功能简介</h3>
             <div class="box box-info">
-                供网站用户账户信息永久存储功能。
+                添加一个新用户。
             </div>
-            <form id="sampleform" method="post" action="#">
+            <form id="from" name="from" method="post" action="@Url.Content("~/User/Add")">
+                <fieldset>
+                    <legend>用户信息</legend>
+                    <p>
+                        <label class="required" for="producttitle">用户账号</label>
+                        <br />
+                        <input type="text" id="UserName" name="UserName" class="half title" value=""  />
+                        <small>输入用户账号</small>
+                    </p>
+
+                    <p class="box">
+                        <input type="submit" class="btn btn-green big" value="添加" />
+                        或 <a href="#">取消</a>
+                    </p>
+                </fieldset>
             </form>
         </section>
         <!-- 左边分部小节结束 -->
-
-
         <!-- 右边分部小节开始 -->
         <aside class="column width2">
             @Html.Partial("_QuickMenu");
+
             <div class="content-box">
                 <header>
                     <h3>便捷信息</h3>
                 </header>
                 <section>
-                    <q>这里描述一段实用的便捷描述文字信息。
-                    <cite>w3schools.com</cite></q>
+                    <q>这里描述一段实用的便捷描述文字信息。 <cite>w3schools.com</cite></q>
                 </section>
             </div>
         </aside>

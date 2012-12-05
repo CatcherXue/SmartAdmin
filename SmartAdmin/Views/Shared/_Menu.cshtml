@@ -33,7 +33,7 @@
         <!--门户网站后台基础应用模块结束-->
         <!--门户网站后台基础管理模块-->
         <li @if (url.Contains("System/") || url.Contains("Configuration/") || url.Contains("Backup/") || url.Contains("Logger/") ||
-                url.Contains("Analysis/") || url.Contains("Security/") || url.Contains("Update/") || url.Contains("Interface/"))
+                url.Contains("Analysis/") || url.Contains("Security/") || url.Contains("Update/") || url.Contains("Interface/") || url.Contains("User/"))
             { @Html.Raw(className);
             }><a href="@Url.Content("~/System/Index")">系统管理</a>
             <ul>
