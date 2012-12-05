@@ -75,6 +75,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Content\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\icon\favicon.ico" />
+    <Content Include="Content\images\slide-01.jpg" />
+    <Content Include="Content\images\slide-02.jpg" />
+    <Content Include="Content\images\slide-03.jpg" />
+    <Content Include="Content\jquery\jquery.js" />
+    <Content Include="Content\main.css" />
     <Content Include="Global.asax" />
     <Content Include="SmartPortal.Publish.xml" />
     <Content Include="Web.config" />
@@ -139,6 +153,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\Publish.pubxml" />
+    <Content Include="Views\Shared\_CopyRight.cshtml" />
+    <Content Include="Views\Shared\_Menu.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
