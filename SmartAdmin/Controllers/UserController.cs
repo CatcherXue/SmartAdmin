@@ -45,7 +45,9 @@ namespace Smart.Admin.Controllers
         [HttpPost]
         public ActionResult Add(Models.User model)
         {
-            return View();
+            model.Nick = "服务器已接受处理";
+
+            return View(model);
         }
 
         [HttpGet]
