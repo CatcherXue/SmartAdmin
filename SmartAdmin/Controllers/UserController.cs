@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Smart.Admin;
+using System.Data.Entity;
 
 namespace Smart.Admin.Controllers
 {
@@ -16,12 +17,14 @@ namespace Smart.Admin.Controllers
     [Filter.DefaultLoggerActionFilter]
     public class UserController : Controller
     {
-        //
-        // GET: /User/
+        private Smart.Admin.Models.SmartAdminDB smartAdminDB = new Models.SmartAdminDB();
 
         public ActionResult Index()
         {
-            return View();
+            var data = from m in smartAdminDB.Users
+                       select m;
+
+            return View(data);
         }
 
         [HttpGet]
@@ -45,22 +48,53 @@ namespace Smart.Admin.Controllers
         [HttpPost]
         public ActionResult Add(Models.User model)
         {
-            model.Nick = "服务器已接受处理";
+            smartAdminDB.Users.Add(model);
+            smartAdminDB.SaveChanges();
 
-            return View(model);
+            return RedirectToAction("Index");
+
+            //return View(model);
         }
 
         [HttpGet]
-        public ActionResult Del()
+        public ActionResult Edit(string userName)
         {
-            return View();
+            //Get by username model
+            var data = from m in smartAdminDB.Users
+                       where m.UserName == userName
+                       select m;
+
+            return View(data.First<Models.User>());
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Models.User model)
+        {
+            smartAdminDB.Users.Attach(model);
+
+            smartAdminDB.Entry(model).State =
+
+            smartAdminDB.SaveChanges();
+
+            return RedirectToAction("Index");
+
+            //return View();
         }
 
         [HttpGet]
-        public ActionResult List(int currentPage,int pageSize)
+        public ActionResult Del(string userName)
         {
+            var data = from m in smartAdminDB.Users
+                       where m.UserName == userName
+                       select m;
+
+            smartAdminDB.Users.Remove(data.First<Smart.Admin.Models.User>());
+
+            smartAdminDB.SaveChanges();
+
+            this.ViewBag.Message = "用户删除成功";
+
             return View();
         }
-
     }
 }

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model  IEnumerable<Smart.Admin.Models.User>
+@{
     ViewBag.Title = "用户管理";
 }
 <!-- Page title -->
@@ -38,16 +39,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="gradeX">
-                        <td>Admin
-                        </td>
-                        <td>超级管理员
-                        </td>
-                        <td>2012-12-06 17:30:22
-                        </td>
-                        <td>在线
-                        </td>
-                    </tr>
+                    @foreach (Smart.Admin.Models.User user in Model)
+                    {
+                        <tr class="gradeX">
+                            <td>@user.UserName</td>
+                            <td>@user.Nick</td>
+                            <td>@user.EndLoginDate</td>
+                            <td>
+                                <a href="@Url.Content("~/User/Edit?userName=")@user.UserName">编辑</a>|
+                                <a href="@Url.Content("~/User/Del?userName=")@user.UserName">删除</a>
+                            </td>
+                        </tr>
+                    }
                 </tbody>
                 <tfoot>
                     <tr>
