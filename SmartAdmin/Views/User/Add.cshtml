@@ -44,14 +44,14 @@
                     <p>
                         <label class="required" for="password">账户密码：</label>
                         <br />
-                        <input id="password" name="password" type="password" class="half" 
+                        <input id="password" name="password" type="text" class="half" 
                             value="@Model.Password" />
                     </p>
 
                     <p>
                         <label class="required" for="password_confirm">重复密码：</label>
                         <br />
-                        <input id="password_confirm" name="password_confirm" type="password" class="half" 
+                        <input id="password_confirm" name="password_confirm" type="text" class="half" 
                             value="@Model.Password"/>
                         <small>再次输入密码</small>
                     </p>
@@ -97,9 +97,9 @@
                     <p>
                         <label class="required" for="OnLine">登录状态：</label>
                         <br />
-                        <input id="OnLine" name="OnLine" type="checkbox" value="@Model.OnLine" />
+                        @Html.CheckBox("OnLine", Model.OnLine)
                         <label>是否在线</label>
-                        <input id="MutileOnLine" name="MutileOnLine" type="checkbox" value="@Model.MutileOnLine"  />
+                        @Html.CheckBox("MutileOnLine", Model.MutileOnLine)
                         <label>多处登录</label>
                     </p>
 

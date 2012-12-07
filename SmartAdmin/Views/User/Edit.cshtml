@@ -2,15 +2,14 @@
 @{
     ViewBag.Title = "编辑用户";
 }
-
-
 <!-- Page title -->
 <div id="pagetitle">
     <div class="wrapper">
-        <h1>用户管理 &rarr; <span>编辑用户</span></h1>
+        <h1>
+            用户管理 &rarr; <span>编辑用户</span></h1>
         <!-- Quick search box -->
         <form action="" method="get">
-            <input class="" type="text" id="q" name="q" value="请输入搜索关键字" />
+        <input class="" type="text" id="q" name="q" value="请输入搜索关键字" />
         </form>
     </div>
 </div>
@@ -21,104 +20,116 @@
     <div class="wrapper">
         <!-- 左边分部小节开始 -->
         <section class="column width6 first">
-            <h3>功能简介</h3>
+            <h3>
+                功能简介</h3>
             <div class="box box-info">
-               编辑用户信息。
+                编辑用户信息。
             </div>
             <form id="from" name="from" method="post" action="@Url.Content("~/User/Edit")">
-                <fieldset>
-                    <legend>用户信息</legend>
-                    <p>
-                        <label class="required" for="username">用户账号：</label>
-                        <br />
-                        <input type="text" id="username" name="username" class="half" 
+            <fieldset>
+                <legend>用户信息</legend>
+                <p>
+                    <label class="required" for="username">
+                        用户账号：</label>
+                    <br />
+                    <input type="text" id="username" name="username" class="half" 
                             value="@Model.UserName" />
-                    </p>
-
-                    <p>
-                        <label class="required" for="Nick">用户昵称：</label>
-                        <br />
-                        <input id="Nick" name="Nick" type="text" class="half" 
+                </p>
+                <p>
+                    <label class="required" for="Nick">
+                        用户昵称：</label>
+                    <br />
+                    <input id="Nick" name="Nick" type="text" class="half" 
                             value="@Model.Nick" />
-                    </p>
-
-                    <p>
-                        <label class="required" for="password">账户密码：</label>
-                        <br />
-                        <input id="password" name="password" type="password" class="half" 
+                </p>
+                <p>
+                    <label class="required" for="password">
+                        账户密码：</label>
+                    <br />
+                    <input id="password" name="password" type="text" class="half" 
                             value="@Model.Password" />
-                    </p>
-
-                    <p>
-                        <label class="required" for="password_confirm">重复密码：</label>
-                        <br />
-                        <input id="password_confirm" name="password_confirm" type="password" class="half" 
+                </p>
+                <p>
+                    <label class="required" for="password_confirm">
+                        重复密码：</label>
+                    <br />
+                    <input id="password_confirm" name="password_confirm" type="text" class="half" 
                             value="@Model.Password"/>
-                        <small>再次输入密码</small>
-                    </p>
-
-                    <p>
-                        <label class="required" for="EmailAddress">电子邮件：</label>
-                        <br />
-                        <input id="EmailAddress" name="EmailAddress" type="text" class="half"
+                    <small>再次输入密码</small>
+                </p>
+                <p>
+                    <label class="required" for="EmailAddress">
+                        电子邮件：</label>
+                    <br />
+                    <input id="EmailAddress" name="EmailAddress" type="text" class="half"
                             value="@Model.EmailAddress" />
-                    </p>
-
-                    <p>
-                        <label class="required" for="RegisterDate">注册时间：</label>
-                        <br />
-                        <input id="RegisterDate" name="RegisterDate" type="text" class="half"
+                </p>
+                <p>
+                    <label class="required" for="RegisterDate">
+                        注册时间：</label>
+                    <br />
+                    <input id="RegisterDate" name="RegisterDate" type="text" class="half"
                             value="@Model.RegisterDate.ToString("yyyy-MM-dd HH:mm:ss")" />
-                    </p>
-
-                    <p>
-                        <label class="required" for="EndLoginDate">最后登录：</label>
-                        <br />
-                        <input id="EndLoginDate" name="EndLoginDate" type="text" class="half" 
+                </p>
+                <p>
+                    <label class="required" for="EndLoginDate">
+                        最后登录：</label>
+                    <br />
+                    <input id="EndLoginDate" name="EndLoginDate" type="text" class="half" 
                             value="@Model.EndLoginDate.ToString("yyyy-MM-dd HH:mm:ss")" />
-                    </p>
-
-                    <p>
-                        <label class="required" for="UserRole">用户角色：</label>
-                        <br />
-                        <select id="UserRole" class="half" name="UserRole">
-                            <option value="1">超级管理员</option>
-                            <option value="2">工作职员</option>
-                            <option value="3">普通用户</option>
-                        </select>
-                    </p>
-
-                    <p>
-                        <label class="required" for="CurrentIPAddress">当前登录IP：</label>
-                        <br />
-                        <input id="CurrentIPAddress" name="CurrentIPAddress" type="text" class="half" 
+                </p>
+                <p>
+                    <label class="required" for="UserRole">
+                        用户角色：</label>
+                    <br />
+                    <select id="UserRole" class="half" name="UserRole">
+                        <option value="1">超级管理员</option>
+                        <option value="2">工作职员</option>
+                        <option value="3">普通用户</option>
+                    </select>
+                </p>
+                <p>
+                    <label class="required" for="CurrentIPAddress">
+                        当前登录IP：</label>
+                    <br />
+                    <input id="CurrentIPAddress" name="CurrentIPAddress" type="text" class="half" 
                             readonly="true" value="@Model.CurrentIPAddress"/>
-                    </p>
-
-                    <p>
-                        <label class="required" for="OnLine">登录状态：</label>
-                        <br />
-                        <input id="OnLine" name="OnLine" type="checkbox" value="@Model.OnLine" />
-                        <label>是否在线</label>
-                        <input id="MutileOnLine" name="MutileOnLine" type="checkbox" value="@Model.MutileOnLine"  />
-                        <label>多处登录</label>
-                    </p>
-
-                    <p class="box">
-                        <input type="submit" class="btn btn-green big" value="保存" />
-                        或 <a href="@Url.Content("~/User/Index")" class="btn big">取消</a>
-                    </p>
-                </fieldset>
+                </p>
+                <p>
+                    <label class="required" for="OnLine">
+                        登录状态：</label>
+                    <br />
+                    @{
+                        string checkedText = "checked=\"checked\"";
+                    }
+                    <input type="checkbox" name="OnLine" @if (Model.OnLine)
+                                                         {  @Html.Raw(checkedText);
+                                                         }
+                                                          value="@Model.OnLine"/>
+                    <label>
+                        是否在线</label>
+                    <input type="checkbox" name="MutileOnLine" @if (Model.MutileOnLine)
+                                                               { @Html.Raw(checkedText);
+                                                               }
+                                                                value="@Model.MutileOnLine"/>
+                    <label>
+                        多处登录</label>
+                </p>
+                <p class="box">
+                    <input type="submit" class="btn btn-green big" value="保存" />
+                    或 <a href="@Url.Content("~/User/Index")" class="btn big">取消</a>
+                </p>
+            </fieldset>
             </form>
         </section>
         <!-- 左边分部小节结束 -->
         <!-- 右边分部小节开始 -->
         <aside class="column width2">
             @Html.Partial("_QuickMenu");
-
             <div class="content-box">
                 <header>
-                    <h3>便捷信息</h3>
+                    <h3>
+                        便捷信息</h3>
                 </header>
                 <section>
                     <q>这里描述一段实用的便捷描述文字信息。 <cite>w3schools.com</cite></q>
@@ -130,7 +141,6 @@
     <!-- End of Wrapper -->
 </div>
 <!-- End of Page content -->
-
 <script type="text/javascript">
     $(function () {
         // validate form on keyup and submit
