@@ -50,6 +50,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.6.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Smart.Utility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Smart.Utility.dll</HintPath>
@@ -309,6 +312,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\User\Alert.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\System\InstallDataBase.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\System\NoThanks.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

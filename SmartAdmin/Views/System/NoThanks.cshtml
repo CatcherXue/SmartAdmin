@@ -1,0 +1,116 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>调查问卷 - 网站后台管理系统V1.0.1</title>
+    <meta name="description" content="调查问卷" />
+    <meta name="keywords" content="调查问卷" />
+    <!-- Favicons -->
+    <link rel="shortcut icon" type="image/png" href="@Url.Content("~/content/img/favicons/favicon.png")" />
+    <link rel="icon" type="image/png" href="@Url.Content("~/content/img/favicons/favicon.png")" />
+    <link rel="apple-touch-icon" href="@Url.Content("~/content/img/favicons/apple.png")" />
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="@Url.Content("~/content/css/style.css")" type="text/css" />
+    <!-- Your Custom Stylesheet -->
+    <link rel="stylesheet" href="@Url.Content("~/content/css/custom.css")" type="text/css" />
+    <!--swfobject - needed only if you require <video> tag support for older browsers -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/swfobject.js")"></script>
+    <!-- jQuery with plugins -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery-1.4.2.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.ui.core.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.ui.widget.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.ui.tabs.min.js")"></script>
+    <!-- jQuery tooltips -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.tipTip.min.js")"></script>
+    <!-- Superfish navigation -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.superfish.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.supersubs.min.js")"></script>
+    <!-- jQuery form validation -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.validate_pack.js")"></script>
+    <!-- jQuery popup box -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.nyroModal.pack.js")"></script>
+    <!-- Internet Explorer Fixes -->
+    <!--[if IE]>
+		<link rel="stylesheet" type="text/css" media="all" href="css/ie.css"/>
+		<script src="js/html5.js"></script>
+		<![endif]-->
+    <!--Upgrade MSIE5.5-7 to be compatible with MSIE8: http://ie7-js.googlecode.com/svn/version/2.1(beta3)/IE8.js -->
+    <!--[if lt IE 8]>
+		<script src="js/IE8.js"></script>
+		<![endif]-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+        });
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header id="top">
+        <div class="wrapper-login">
+            <!-- Title/Logo - can use text instead of image -->
+            <div id="title">
+                <img src="@Url.Content("~/content/img/logo.png")" alt="Administry" />
+            </div>
+            <!-- Main navigation -->
+            <nav id="menu">
+                <ul class="sf-menu">
+                    <li><a href="#">调查问卷</a> </li>
+                </ul>
+            </nav>
+            <!-- End of Main navigation -->
+            <!-- Aside links -->
+            <aside>
+                <b>简体中文</b><!-- &middot; <a href="#">English</a>-->
+            </aside>
+            <!-- End of Aside links -->
+        </div>
+    </header>
+    <!-- End of Header -->
+    <!-- Page title -->
+    <div id="pagetitle">
+        <div class="wrapper-login">
+        </div>
+    </div>
+    <!-- End of Page title -->
+    <!-- Page content -->
+    <div id="page">
+        <!-- Wrapper -->
+        <div class="wrapper-login">
+            <!-- 调查问卷 -->
+            <section class="full">
+                <h3>
+                    调查问卷</h3>
+                <div class="box box-info">
+                    请输入您的宝贵意见，以便支持我们的改进工作！
+                </div>
+                <form id="form" method="post" action="#">
+                <p>
+                    <a href="#" class="btn btn-green big">提交反馈</a> 
+                    <a href="@Url.Content("~/System/Install")" class="btn btn-green big">返回安装</a>
+                </p>
+                <div class="clear">
+                    &nbsp;
+                </div>
+                </form>
+            </section>
+            <!-- 调查问卷 -->
+        </div>
+        <!-- End of Wrapper -->
+    </div>
+    <!-- End of Page content -->
+    <!-- Page footer -->
+    <footer id="bottom">
+        <div class="wrapper-login">
+            <p>
+                Copyright &copy; 2012 <b><a href="#" title="">SmartAdmin</a></b>
+            </p>
+        </div>
+    </footer>
+    <!-- End of Page footer -->
+    <!-- User interface javascript load -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/administry.js")"></script>
+</body>
+</html>

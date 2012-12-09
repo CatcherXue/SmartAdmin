@@ -29,6 +29,7 @@ namespace Smart.Admin.Filter
         //     筛选器上下文。
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
+            /*
             string logText = string.Format("{0}\t{1}\t{2}\t{3}\r\n",
                 DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
                 filterContext.HttpContext.Request.Browser.Browser,
@@ -38,6 +39,7 @@ namespace Smart.Admin.Filter
             System.IO.File.AppendAllText(
                 filterContext.HttpContext.Server.MapPath("~/") + "log.txt",
                 logText);
+           */
         }
         //
         // 摘要:

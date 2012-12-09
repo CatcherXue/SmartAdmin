@@ -14,14 +14,12 @@
     <link rel="apple-touch-icon" href="@Url.Content("~/content/img/favicons/apple.png")" />
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="@Url.Content("~/content/css/style.css")" type="text/css" />
-
     <!-- Your Custom Stylesheet -->
     <link rel="stylesheet" href="@Url.Content("~/content/css/custom.css")" type="text/css" />
     <!--swfobject - needed only if you require <video> tag support for older browsers -->
     <script type="text/javascript" src="@Url.Content("~/content/js/swfobject.js")"></script>
     <!-- jQuery with plugins -->
     <script type="text/javascript" src="@Url.Content("~/content/js/jquery-1.4.2.min.js")"></script>
-
     <script type="text/javascript" src="@Url.Content("~/content/js/jquery.ui.core.min.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/content/js/jquery.ui.widget.min.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/content/js/jquery.ui.tabs.min.js")"></script>
@@ -49,7 +47,6 @@
     </script>
 </head>
 <body>
-
     <!-- Header -->
     <header id="top">
         <div class="wrapper-login">
@@ -60,15 +57,9 @@
             <!-- Main navigation -->
             <nav id="menu">
                 <ul class="sf-menu">
-                    <li class="current">
-                        <a href="#">许可协议</a>
-                    </li>
-                    <li>
-                        <a href="#">数据库配置</a>
-                    </li>
-                    <li>
-                        <a href="#">网站配置</a>
-                    </li>
+                    <li class="current"><a href="#">许可协议</a> </li>
+                    <li><a href="#">数据库配置</a> </li>
+                    <li><a href="#">完成配置</a> </li>
                 </ul>
             </nav>
             <!-- End of Main navigation -->
@@ -82,26 +73,27 @@
     <!-- End of Header -->
     <!-- Page title -->
     <div id="pagetitle">
-        <div class="wrapper-login"></div>
+        <div class="wrapper-login">
+        </div>
     </div>
     <!-- End of Page title -->
-
     <!-- Page content -->
     <div id="page">
         <!-- Wrapper -->
         <div class="wrapper-login">
             <!-- 许可协议 -->
             <section class="full">
-                <h3>许可协议</h3>
+                <h3>
+                    许可协议</h3>
                 <div class="box box-info">
                     请您认真仔细阅读本系统使用授权许可协议。
                 </div>
                 <form id="loginform" method="post" action="">
-
-                    <p>
-                        <label>许可协议(LGPL):</label>
-                        <br />
-                        <textarea style="width: 350px; height: 300px;">                    GNU GENERAL PUBLIC LICENSE
+                <p>
+                    <label>
+                        许可协议(LGPL):</label>
+                    <br />
+                    <textarea style="width: 350px; height: 300px;">                    GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
  Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
@@ -776,33 +768,21 @@ the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
 <http://www.gnu.org/philosophy/why-not-lgpl.html>.
                         </textarea>
-                    </p>
-
-                    <p>
-                        <input type="submit" class="btn btn-green big" value="我同意" />
-                        <input type="submit" class="btn btn-red big" value="我拒绝" />
-                    </p>
-                    <div class="clear">
-                        &nbsp;
-                    </div>
-
+                </p>
+                <p>
+                    <a href="@Url.Content("~/System/InstallDataBase")" class="btn btn-green big">我同意</a>
+                    <a href="@Url.Content("~/System/NoThanks")" class="btn btn-red big">我拒绝</a>
+                </p>
+                <div class="clear">
+                    &nbsp;
+                </div>
                 </form>
             </section>
             <!-- 许可协议结束 -->
-
-            <!--数据库配置-->
-            <section class="full">
-                <h3>数据库配置</h3>
-                <div class="box box-info">
-                    请您认真仔细阅读本系统使用授权许可协议。
-                </div>
-            </section>
-            <!--数据库配置结束-->
         </div>
         <!-- End of Wrapper -->
     </div>
     <!-- End of Page content -->
-
     <!-- Page footer -->
     <footer id="bottom">
         <div class="wrapper-login">
@@ -812,7 +792,6 @@ Public License instead of this License.  But first, please read
         </div>
     </footer>
     <!-- End of Page footer -->
-
     <!-- User interface javascript load -->
     <script type="text/javascript" src="@Url.Content("~/content/js/administry.js")"></script>
 </body>
