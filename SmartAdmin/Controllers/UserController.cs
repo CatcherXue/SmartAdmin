@@ -15,6 +15,7 @@ namespace Smart.Admin.Controllers
     /// </summary>
     [Filter.DefaultAuthorizationFilter]
     [Filter.DefaultLoggerActionFilter]
+    [Filter.DefaultExceptionFilter]
     public class UserController : Controller
     {
         private Smart.Admin.Models.SmartAdminDB smartAdminDB = new Models.SmartAdminDB();

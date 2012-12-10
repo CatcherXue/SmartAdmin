@@ -13,6 +13,7 @@ namespace Smart.Admin.Controllers
     /// 提供系统安装、维护等功能。
     /// </summary>
     [Filter.DefaultLoggerActionFilter]
+    [Filter.DefaultExceptionFilter]
     public class SystemController : Controller
     {
         Models.SmartAdminDB smartAdminDB = new Models.SmartAdminDB();

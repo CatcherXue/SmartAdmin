@@ -1,0 +1,6 @@
+E:\smartdevelop\SmartAdmin\SmartAdmin\bin\Smart.Admin.dll
+E:\smartdevelop\SmartAdmin\SmartAdmin\bin\Smart.Admin.pdb
+E:\smartdevelop\SmartAdmin\SmartAdmin\bin\EntityFramework.dll
+E:\smartdevelop\SmartAdmin\SmartAdmin\bin\MySql.Data.dll
+E:\smartdevelop\SmartAdmin\SmartAdmin\obj\Debug\Smart.Admin.dll
+E:\smartdevelop\SmartAdmin\SmartAdmin\obj\Debug\Smart.Admin.pdb
