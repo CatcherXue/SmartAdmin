@@ -4,3 +4,9 @@ E:\smartdevelop\SmartAdmin\SmartAdmin\bin\EntityFramework.dll
 E:\smartdevelop\SmartAdmin\SmartAdmin\bin\MySql.Data.dll
 E:\smartdevelop\SmartAdmin\SmartAdmin\obj\Debug\Smart.Admin.dll
 E:\smartdevelop\SmartAdmin\SmartAdmin\obj\Debug\Smart.Admin.pdb
+G:\开源项目\SmartDevelop\SmartAdmin\SmartAdmin\bin\Smart.Admin.dll
+G:\开源项目\SmartDevelop\SmartAdmin\SmartAdmin\bin\Smart.Admin.pdb
+G:\开源项目\SmartDevelop\SmartAdmin\SmartAdmin\bin\MySql.Data.dll
+G:\开源项目\SmartDevelop\SmartAdmin\SmartAdmin\obj\Debug\ResolveAssemblyReference.cache
+G:\开源项目\SmartDevelop\SmartAdmin\SmartAdmin\obj\Debug\Smart.Admin.dll
+G:\开源项目\SmartDevelop\SmartAdmin\SmartAdmin\obj\Debug\Smart.Admin.pdb
