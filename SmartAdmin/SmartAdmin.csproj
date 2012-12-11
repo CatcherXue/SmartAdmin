@@ -112,6 +112,7 @@
     <Compile Include="Models\InitData.cs" />
     <Compile Include="Models\Interface.cs" />
     <Compile Include="Models\Logger.cs" />
+    <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\Security.cs" />
     <Compile Include="Models\SmartAdminDB.cs" />
     <Compile Include="Models\System.cs" />

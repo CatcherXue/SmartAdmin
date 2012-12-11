@@ -37,6 +37,11 @@ namespace Smart.Admin.Models
         public DbSet<ArticleCat> ArticleCats { get; set; }
 
         /// <summary>
+        /// 菜单信息表
+        /// </summary>
+        public DbSet<Menu> Menus { get; set; }
+
+        /// <summary>
         /// 开放平台接口信息表
         /// </summary>
         //public DbSet<Interface> Interfaces { get; set; }
