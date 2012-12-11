@@ -1,11 +1,11 @@
 ﻿@model Smart.Admin.Models.Article
 @{
-    ViewBag.Title = "添加文章";
+    ViewBag.Title = "编辑文章";
 }
 <!-- Page title -->
 <div id="pagetitle">
     <div class="wrapper">
-        <h1>文章管理 &rarr; <span>添加文章</span></h1>
+        <h1>文章管理 &rarr; <span>编辑文章</span></h1>
         <!-- Quick search box -->
         <form action="" method="get">
             <input class="" type="text" id="q" name="q" value="请输入搜索关键字" />
@@ -21,13 +21,14 @@
         <section class="column width6 first">
             <h3>功能简介</h3>
             <div class="box box-info">
-                添加一篇新的文章。
+                编辑文章文章。
             </div>
-            <form id="from" name="from" method="post" action="@Url.Content("~/Article/Add")" accept-charset="utf-8">
+            <form id="from" name="from" method="post" action="@Url.Content("~/Article/Edit")" accept-charset="utf-8">
                 <fieldset>
                     <legend>文章信息</legend>
                     <p>
                         <label class="required" for="ArticleTitle">文章标题：</label><br />
+                        <input type="hidden" id="ID" name="ID" value="@Model.ID" />
                         <input type="text" id="ArticleTitle" name="ArticleTitle" class="full" value="@Model.ArticleTitle" />
                     </p>
 
@@ -83,7 +84,7 @@
                     </div>
 
                     <p class="box">
-                        <input type="submit" class="btn btn-green big" value="添加" />
+                        <input type="submit" class="btn btn-green big" value="保存" />
                         或 <a href="@Url.Content("~/Article/Index")" class="btn big">取消</a>
                     </p>
                 </fieldset>

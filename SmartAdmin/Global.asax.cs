@@ -32,12 +32,12 @@ namespace Smart.Admin
 
         protected void Application_Start()
         {
-            //无论是否存在都初始化
-            //Database.SetInitializer(new DropCreateDatabaseAlways<Smart.Admin.Models.SmartAdminDB>());
-            //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Smart.Admin.Models.SmartAdminDB>());
-            //数据部不存在时初始化
-            //Database.SetInitializer(new CreateDatabaseIfNotExists<Smart.Admin.Models.SmartAdminDB>());
-
+            //模型更改时修改数据库
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Smart.Admin.Models.SmartAdminDB>());
+            
+            //初始化数据
+            Database.SetInitializer(new Models.InitData());
+            
             AreaRegistration.RegisterAllAreas();
 
             RegisterGlobalFilters(GlobalFilters.Filters);

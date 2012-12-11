@@ -8,18 +8,18 @@ using System.Data;
 namespace Smart.Admin.Controllers
 {
     /// <summary>
-    /// 门户基础模块:文章管理
+    /// 门户基础模块:文章类目管理
     /// </summary>
     [Filter.DefaultAuthorizationFilter]
     [Filter.DefaultLoggerActionFilter]
     [Filter.DefaultExceptionFilter]
-    public class ArticleController : Controller
+    public class ArticleCatController : Controller
     {
         private Models.SmartAdminDB smartAdminDB = new Models.SmartAdminDB();
 
         public ActionResult Index()
         {
-            var data = from m in smartAdminDB.Articles
+            var data = from m in smartAdminDB.ArticleCats
                        select m;
 
             return View(data);
@@ -28,59 +28,26 @@ namespace Smart.Admin.Controllers
         [HttpGet]
         public ActionResult Add()
         {
-            Models.Article entity = new Models.Article();
+            Models.ArticleCat entity = new Models.ArticleCat();
 
-            entity.PublishTime = DateTime.Now;
+            entity.Status = "normal";
+            entity.IsParent = true;
 
             return View(entity);
         }
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Add(Models.Article entity)
+        public ActionResult Add(Models.ArticleCat entity)
         {
-            smartAdminDB.Articles.Add(entity);
+            smartAdminDB.ArticleCats.Add(entity);
 
-            string title = "添加文章提示";
-            string message = "添加文章成功。";
-            string callBackUrl = "~/Article/Index";
+            string title = "添加类目提示";
+            string message = "添加类目成功。";
+            string callBackUrl = "~/ArticleCat/Index";
             if (smartAdminDB.SaveChanges() <= 0)
             {
-                message = "添加文章失败。";
-                callBackUrl = Request.Url.AbsoluteUri;
-            }
-
-            return RedirectToAction("Alert", new
-            {
-                callBackUrl = callBackUrl,
-                title = title,
-                content = message
-            });
-        }
-
-        [HttpGet]        
-        public ActionResult Edit(int id)
-        {
-            var data = from m in smartAdminDB.Articles
-                       where m.ID == id
-                       select m;
-
-            return View(data.First<Models.Article>());
-        }
-
-        [HttpPost]
-        [ValidateInput(false)]
-        public ActionResult Edit(Models.Article entity)
-        {
-            smartAdminDB.Articles.Attach(entity);
-            smartAdminDB.Entry(entity).State = EntityState.Modified;
-
-            string title = "编辑文章提示";
-            string message = "编辑文章成功。";
-            string callBackUrl = "~/Article/Index";
-            if (smartAdminDB.SaveChanges() <= 0)
-            {
-                message = "编辑文章失败。";
+                message = "添加类目失败。";
                 callBackUrl = Request.Url.AbsoluteUri;
             }
 
@@ -93,20 +60,54 @@ namespace Smart.Admin.Controllers
         }
 
         [HttpGet]
-        public ActionResult Del(int id)
+        public ActionResult Edit(int cid)
         {
-            var data = from m in smartAdminDB.Articles
-                       where m.ID == id
+            var data = from m in smartAdminDB.ArticleCats
+                       where m.Cid == cid
                        select m;
 
-            smartAdminDB.Entry(data.First<Models.Article>()).State = EntityState.Deleted;
+            return View(data.First<Models.ArticleCat>());
+        }
 
-            string title = "删除文章提示";
-            string message = "删除文章成功。";
-            string callBackUrl = "~/Article/Index";
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult Edit(Models.ArticleCat entity)
+        {
+            smartAdminDB.ArticleCats.Attach(entity);
+            smartAdminDB.Entry(entity).State = EntityState.Modified;
+
+            string title = "编辑类目提示";
+            string message = "编辑类目成功。";
+            string callBackUrl = "~/ArticleCat/Index";
             if (smartAdminDB.SaveChanges() <= 0)
             {
-                message = "删除文章失败。";
+                message = "编辑类目失败。";
+                callBackUrl = Request.Url.AbsoluteUri;
+            }
+
+            return RedirectToAction("Alert", new
+            {
+                callBackUrl = callBackUrl,
+                title = title,
+                content = message
+            });
+        }
+
+        [HttpGet]
+        public ActionResult Del(int cid)
+        {
+            var data = from m in smartAdminDB.ArticleCats
+                       where m.Cid == cid
+                       select m;
+
+            smartAdminDB.Entry(data.First<Models.ArticleCat>()).State = EntityState.Deleted;
+
+            string title = "删除类目提示";
+            string message = "删除类目成功。";
+            string callBackUrl = "~/ArticleCat/Index";
+            if (smartAdminDB.SaveChanges() <= 0)
+            {
+                message = "删除类目失败。";
                 callBackUrl = Request.Url.AbsoluteUri;
             }
 

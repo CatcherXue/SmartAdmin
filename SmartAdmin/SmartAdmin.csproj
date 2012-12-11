@@ -82,6 +82,7 @@
   <ItemGroup>
     <Compile Include="AdminAreaRegistration.cs" />
     <Compile Include="Controllers\AnalysisController.cs" />
+    <Compile Include="Controllers\ArticleCatController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\AttachmentController.cs" />
     <Compile Include="Controllers\BackupController.cs" />
@@ -104,8 +105,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Article.cs" />
+    <Compile Include="Models\ArticleCat.cs" />
     <Compile Include="Models\Backup.cs" />
     <Compile Include="Models\Configuration.cs" />
+    <Compile Include="Models\InitData.cs" />
     <Compile Include="Models\Interface.cs" />
     <Compile Include="Models\Logger.cs" />
     <Compile Include="Models\Security.cs" />
@@ -224,7 +228,6 @@
     <Content Include="Scripts\MicrosoftMvcValidation.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
@@ -292,9 +295,6 @@
     <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Exception\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Article\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -317,6 +317,33 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\System\NoThanks.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Article\_QuickMenu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Article\Alert.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Article\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Exception\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ArticleCat\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ArticleCat\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ArticleCat\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ArticleCat\Alert.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ArticleCat\_QuickMenu.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

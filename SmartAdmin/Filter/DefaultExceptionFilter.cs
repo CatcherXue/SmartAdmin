@@ -11,6 +11,8 @@ namespace Smart.Admin.Filter
     /// </summary>
     public class DefaultExceptionFilter : HandleErrorAttribute
     {
+        private Smart.Admin.Models.SmartAdminDB smartAdminDB = new Models.SmartAdminDB();
+
         // 摘要:
         //     在发生异常时调用。
         //
@@ -23,26 +25,14 @@ namespace Smart.Admin.Filter
         //     filterContext 参数为 null。
         public override void OnException(ExceptionContext filterContext)
         {
-            //记录错误日志
-            /*
-            string logText = string.Format("{0}\t{1}\t{2}\t{3}\t{4}\r\n",
-                DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
-                filterContext.HttpContext.Request.Browser.Browser,
-                filterContext.HttpContext.Request.UserHostAddress,
-                filterContext.HttpContext.Request.Url.AbsoluteUri,
-                filterContext.Exception.StackTrace);
+            //记录异常日志
+            Models.Logger entity = new Models.Logger();
 
-            System.IO.File.AppendAllText(
-                filterContext.HttpContext.Server.MapPath("~/") + "log.txt",
-                logText);
-            */
+            //save log entity to db
+            //
+            //smartAdminDB.SaveChanges();
 
-            //必须标记为已处理
-            filterContext.ExceptionHandled = true;
-
-            //跳转到错误处理页面
-            //filterContext.HttpContext.Response.StatusCode = 303;
-            filterContext.Result = new RedirectResult("~/Exception/Index", false);
+            //filterContext.HttpContext.Session["HandleErrorAttribute"] = this;
         }
     }
 }

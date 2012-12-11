@@ -1,0 +1,47 @@
+﻿@{
+    if (ViewBag.ReferenceUrl == null)
+    {
+        ViewBag.ReferenceUrl = "~/";
+    }
+}
+<!-- Page title -->
+<div id="pagetitle">
+    <div class="wrapper">
+        <h1>文章管理 &rarr; <span>操作提示</span></h1>
+        <!-- Quick search box -->
+        <form action="" method="get">
+            <input class="" type="text" id="q" name="q" value="请输入搜索关键字" />
+        </form>
+    </div>
+</div>
+<!-- End of Page title -->
+<!-- Page content -->
+<div id="page">
+    <!-- Wrapper -->
+    <div class="wrapper">
+        <!-- 左边分部小节开始 -->
+        <section class="column width6 first">
+            <h3>@ViewBag.Title</h3>
+            <div class="box box-info">
+                @ViewBag.Content
+            </div>
+            <a href="@Url.Content(@ViewBag.ReferenceUrl)" class="btn btn-blue">返回 </a>
+        </section>
+        <!-- 左边分部小节结束 -->
+        <!-- 右边分部小节开始 -->
+        <aside class="column width2">
+            @Html.Partial("_QuickMenu");
+            <div class="content-box">
+                <header>
+                    <h3>便捷信息</h3>
+                </header>
+                <section>
+                    <q>这里描述一段实用的便捷描述文字信息。 <cite>w3schools.com</cite></q>
+                </section>
+            </div>
+        </aside>
+        <!-- 右边分部小节结束 -->
+    </div>
+    <!-- End of Wrapper -->
+</div>
+<!-- End of Page content -->

@@ -1,11 +1,11 @@
-﻿@model IEnumerable<Smart.Admin.Models.Article>
+﻿@model IEnumerable<Smart.Admin.Models.ArticleCat>
 @{
-    ViewBag.Title = "文章管理";
+    ViewBag.Title = "类目管理";
 }
 <!-- Page title -->
 <div id="pagetitle">
     <div class="wrapper">
-        <h1>文章管理 &rarr; <span>主页</span></h1>
+        <h1>类目管理 &rarr; <span>主页</span></h1>
         <!-- Quick search box -->
         <form action="" method="get">
             <input class="" type="text" id="q" name="q" value="请输入搜索关键字" />
@@ -21,47 +21,42 @@
         <section class="column width6 first">
             <h3>功能简介</h3>
             <div class="box box-info">
-                管理网站发布的文章。
+                管理网站文章类目。
             </div>
             <!--文章列表开始-->
             <h3>文章列表</h3>
             <table class="display stylized" id="example">
                 <thead>
                     <tr>
-                        <th>文章标题
-                        </th>
-                        <th>发布时间
-                        </th>
-                        <th>作者
-                        </th>
-                        <th>操作
-                        </th>
+                        <th>类目名称</th>
+                        <th>父级分类</th>
+                        <th>排序</th>
+                        <th>状态</th>
+                        <th>操作</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (Smart.Admin.Models.Article entity in Model)
+                    @foreach (Smart.Admin.Models.ArticleCat entity in Model)
                     {
                         <tr>
-                            <td>@entity.ArticleTitle</td>
-                            <td>@entity.PublishTime.ToLongTimeString()</td>
-                            <td>@entity.About</td>
+                            <td>@entity.Name</td>
+                            <td>@entity.IsParent</td>
+                            <td>@entity.Order</td>
+                            <td>@entity.Status</td>
                             <td>
-                                <a href="@Url.Content("~/Article/Edit?id=")@entity.ID">编辑</a>|
-                                <a href="@Url.Content("~/Article/Del?id=")@entity.ID">删除</a>
+                                <a href="@Url.Content("~/ArticleCat/Edit?cid=")@entity.Cid">编辑</a>|
+                                <a href="@Url.Content("~/ArticleCat/Del?cid=")@entity.Cid">删除</a>
                             </td>
                         </tr>
                     }
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th>文章标题
-                        </th>
-                        <th>发布时间
-                        </th>
-                        <th>作者
-                        </th>
-                        <th>操作
-                        </th>
+                        <th>类目名称</th>
+                        <th>父级分类</th>
+                        <th>排序</th>
+                        <th>状态</th>
+                        <th>操作</th>
                     </tr>
                 </tfoot>
             </table>

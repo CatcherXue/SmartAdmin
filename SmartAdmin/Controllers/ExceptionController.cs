@@ -10,16 +10,11 @@ namespace Smart.Admin.Controllers
     /// 默认异常处理控制器
     /// </summary>
     [Filter.DefaultLoggerActionFilter]
-    //[Filter.DefaultExceptionFilter]
     public class ExceptionController : Controller
     {
-        //
-        // GET: /Exception/
-
         public ActionResult Index()
         {
             return View();
         }
-
     }
 }
