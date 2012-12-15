@@ -1,29 +1,41 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "首页";
 }
-
-<!-- Three columns of text below the carousel -->
-<div class="row">
-    <div class="span4">
-        <img class="img-circle" src="#">
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
-        <p><a class="btn" href="#">View details &raquo;</a></p>
-    </div>
-    <!-- /.span4 -->
-    <div class="span4">
-        <img class="img-circle" src="#">
-        <h2>Heading</h2>
-        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn" href="#">View details &raquo;</a></p>
-    </div>
-    <!-- /.span4 -->
-    <div class="span4">
-        <img class="img-circle" src="#">
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn" href="#">View details &raquo;</a></p>
-    </div>
-    <!-- /.span4 -->
+<!--left开始-->
+<div id="left">
+    @Html.Partial("Custom/ProductItem")
+    @Html.Partial("Custom/ArticleItem")
+    <div class="productlist" style="margin-top: 8px;">
+        <img src="@Url.Content("../content/images/lxwm.jpg")" width="251" alt="" /></div>
 </div>
-<!-- /.row -->
+<!--left结束-->
+<!--right开始-->
+<div id="right">
+    <div id="company">
+        <!--tit开始-->
+        <div class="tit">
+            <div class="titleft">
+                详情介绍</div>
+            <div class="titright" style="margin-top: -7px;">
+                <img src="@Url.Content("~/Content/images/more.jpg")" border="0" /></div>
+        </div>
+        <!--tit结束-->
+        <!--示例内容-->
+        <div class="bj">
+            <br />
+            <h1>
+                陶瓷球磨机</h1>
+            <h2>
+                陶瓷球磨机介绍</h2>
+            <p>
+                文字文字字文字</p>
+        </div>
+        <!--示例内容结束-->
+        @Html.Partial("Custom/ArticleDetail")
+        @Html.Partial("Custom/ArticleList")
+        @Html.Partial("Custom/ArticleView")
+        @Html.Partial("Custom/ProductView")
+    </div>
+</div>
+</div>
+<!--right结束-->

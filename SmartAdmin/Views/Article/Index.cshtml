@@ -5,10 +5,11 @@
 <!-- Page title -->
 <div id="pagetitle">
     <div class="wrapper">
-        <h1>文章管理 &rarr; <span>主页</span></h1>
+        <h1>
+            文章管理 &rarr; <span>主页</span></h1>
         <!-- Quick search box -->
         <form action="" method="get">
-            <input class="" type="text" id="q" name="q" value="请输入搜索关键字" />
+        <input class="" type="text" id="q" name="q" value="请输入搜索关键字" />
         </form>
     </div>
 </div>
@@ -19,22 +20,28 @@
     <div class="wrapper">
         <!-- 左边分部小节开始 -->
         <section class="column width6 first">
-            <h3>功能简介</h3>
+            <h3>
+                功能简介</h3>
             <div class="box box-info">
                 管理网站发布的文章。
             </div>
             <!--文章列表开始-->
-            <h3>文章列表</h3>
+            <h3>
+                文章列表</h3>
             <table class="display stylized" id="example">
                 <thead>
                     <tr>
-                        <th>文章标题
+                        <th>
+                            文章标题
                         </th>
-                        <th>发布时间
+                        <th>
+                            发布时间
                         </th>
-                        <th>作者
+                        <th>
+                            作者
                         </th>
-                        <th>操作
+                        <th>
+                            操作
                         </th>
                     </tr>
                 </thead>
@@ -42,25 +49,32 @@
                     @foreach (Smart.Admin.Models.Article entity in Model)
                     {
                         <tr>
-                            <td>@entity.ArticleTitle</td>
-                            <td>@entity.PublishTime.ToLongTimeString()</td>
-                            <td>@entity.About</td>
+                            <td>@entity.ArticleTitle
+                            </td>
+                            <td>@entity.PublishTime.ToLongTimeString()
+                            </td>
+                            <td>@entity.About
+                            </td>
                             <td>
-                                <a href="@Url.Content("~/Article/Edit?id=")@entity.ID">编辑</a>|
-                                <a href="@Url.Content("~/Article/Del?id=")@entity.ID">删除</a>
+                                <a href="@Url.Content("~/Article/Edit?id=")@entity.ID">编辑</a>| <a href="@Url.Content("~/Article/Del?id=")@entity.ID">
+                                    删除</a>
                             </td>
                         </tr>
                     }
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th>文章标题
+                        <th>
+                            文章标题
                         </th>
-                        <th>发布时间
+                        <th>
+                            发布时间
                         </th>
-                        <th>作者
+                        <th>
+                            作者
                         </th>
-                        <th>操作
+                        <th>
+                            操作
                         </th>
                     </tr>
                 </tfoot>
@@ -73,17 +87,28 @@
         <!-- 左边分部小节结束 -->
         <!-- 右边分部小节开始 -->
         <aside class="column width2">
-
-            @Html.Partial("_QuickMenu")
-
-            <div class="content-box">
-                <header>
-                    <h3>便捷信息</h3>
-                </header>
-                <section>
-                    <q>这里描述一段实用的便捷描述文字信息。 <cite>w3schools.com</cite></q>
-                </section>
-            </div>
+            <!--快捷菜单-->
+            @Html.Partial("Custom/QuickMenu", new List<Smart.Admin.Models.Custom.QuickMenu>()
+       {
+           new Smart.Admin.Models.Custom.QuickMenu(){ 
+               Icon="~/Content/img/style.png", 
+               Link="~/Article/Index",
+               LinkText="文章列表", 
+               Description="管理已发布的文章。"},
+           new Smart.Admin.Models.Custom.QuickMenu(){ 
+               Icon="~/Content/img/style.png", 
+               Link="~/Article/Add",
+               LinkText="添加文章", 
+               Description="添加一篇文章。"}
+       })
+            <!--实用的提示信息-->
+            @Html.Partial("Custom/Tips", new Smart.Admin.Models.Custom.Tips()
+       {
+           Title = "提示信息",
+           Content = "这里描述一段实用的便捷描述文字信息。",
+           LinkText = "w3schools.com",
+           Link = "w3schools.com"
+       })
         </aside>
         <!-- 右边分部小节结束 -->
     </div>

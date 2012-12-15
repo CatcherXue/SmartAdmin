@@ -1,14 +1,14 @@
 ﻿@{
     ViewBag.Title = "删除用户";
 }
-
 <!-- Page title -->
 <div id="pagetitle">
     <div class="wrapper">
-        <h1>用户管理 &rarr; <span>删除用户</span></h1>
+        <h1>
+            用户管理 &rarr; <span>删除用户</span></h1>
         <!-- Quick search box -->
         <form action="" method="get">
-            <input class="" type="text" id="q" name="q" value="请输入搜索关键字" />
+        <input class="" type="text" id="q" name="q" value="请输入搜索关键字" />
         </form>
     </div>
 </div>
@@ -19,7 +19,8 @@
     <div class="wrapper">
         <!-- 左边分部小节开始 -->
         <section class="column width6 first">
-            <h3>功能简介</h3>
+            <h3>
+                功能简介</h3>
             <div class="box box-info">
                 用户信息删除提示。
             </div>
@@ -31,21 +32,30 @@
 
         </section>
         <!-- 左边分部小节结束 -->
-
-
-
         <!-- 右边分部小节开始 -->
         <aside class="column width2">
-            @Html.Partial("_QuickMenu");
-            <div class="content-box">
-                <header>
-                    <h3>便捷信息</h3>
-                </header>
-                <section>
-                    <q>这里描述一段实用的便捷描述文字信息。
-                    <cite>w3schools.com</cite></q>
-                </section>
-            </div>
+            <!--快捷菜单-->
+            @Html.Partial("Custom/QuickMenu", new List<Smart.Admin.Models.Custom.QuickMenu>()
+       {
+           new Smart.Admin.Models.Custom.QuickMenu(){ 
+               Icon="~/Content/img/style.png", 
+               Link="~/User/Index",
+               LinkText="用户列表", 
+               Description="管理用户信息。"},
+           new Smart.Admin.Models.Custom.QuickMenu(){ 
+               Icon="~/Content/img/style.png", 
+               Link="~/User/Add",
+               LinkText="添加用户", 
+               Description="添加一个用户。"}
+       })
+            <!--实用的提示信息-->
+            @Html.Partial("Custom/Tips", new Smart.Admin.Models.Custom.Tips()
+       {
+           Title = "提示信息",
+           Content = "这里描述一段实用的便捷描述文字信息。",
+           LinkText = "w3schools.com",
+           Link = "w3schools.com"
+       })
         </aside>
         <!-- 右边分部小节结束 -->
     </div>

@@ -109,6 +109,8 @@
     <Compile Include="Models\ArticleCat.cs" />
     <Compile Include="Models\Backup.cs" />
     <Compile Include="Models\Configuration.cs" />
+    <Compile Include="Models\Custom\QuickMenu.cs" />
+    <Compile Include="Models\Custom\Tips.cs" />
     <Compile Include="Models\InitData.cs" />
     <Compile Include="Models\Interface.cs" />
     <Compile Include="Models\Logger.cs" />
@@ -302,9 +304,6 @@
     <Content Include="Views\User\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\User\_QuickMenu.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\User\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -318,9 +317,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\System\NoThanks.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Article\_QuickMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Article\Alert.cshtml" />
@@ -345,6 +341,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\ArticleCat\_QuickMenu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Custom\Tips.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Custom\QuickMenu.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
