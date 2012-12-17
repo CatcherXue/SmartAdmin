@@ -1,0 +1,280 @@
+﻿@model Smart.Admin.Models.Article
+@{
+    ViewBag.Title = "编辑文章";
+}
+<!-- Page title -->
+<div id="pagetitle">
+    <div class="wrapper">
+        <h1>文章管理 &rarr; <span>编辑文章</span></h1>
+        <!-- Quick search box -->
+        <form action="" method="get">
+            <input class="" type="text" id="q" name="q" value="请输入搜索关键字" />
+        </form>
+    </div>
+</div>
+<!-- End of Page title -->
+<!-- Page content -->
+<div id="page">
+    <!-- Wrapper -->
+    <div class="wrapper">
+        <!-- 左边分部小节开始 -->
+        <section class="column width6 first">
+            <h3>功能简介</h3>
+            <div class="box box-info">
+                编辑文章文章。
+            </div>
+            <form id="from" name="from" method="post" action="@Url.Content("~/Article/Edit")" accept-charset="utf-8">
+                <fieldset>
+                    <legend>文章信息</legend>
+                    <p>
+                        <label class="required" for="ArticleTitle">文章标题：</label><br />
+                        <input type="hidden" id="ID" name="ID" value="@Model.ID" />
+                        <input type="text" id="ArticleTitle" name="ArticleTitle" class="full" value="@Model.ArticleTitle" />
+                    </p>
+
+                    <p>
+                        <label class="required" for="Content">文章内容：</label><br />
+                        <textarea id="Content" name="Content" class="large full">@Model.Content</textarea>
+                    </p>
+
+                    <p>
+                        <label for="">摘要描述：</label><br />
+                        <textarea id="Summary" name="Summary" class="large full" style="height: 50px;">@Model.Summary</textarea>
+                    </p>
+
+                    <div class="clearfix leading">
+                        <!--左边-->
+                        <div class="column width3 first">
+                            <p>
+                                <label for="Keywords">关键字：</label><br />
+                                <input type="text" id="Keywords" name="Keywords" class="full" value="@Model.Keywords" />
+                            </p>
+
+                            <p>
+                                <label for="">发布时间：</label><br />
+                                <input type="text" id="PublishTime" name="PublishTime" class="full" value="@Model.PublishTime" />
+                            </p>
+
+                            <p>
+                                <label for="">文章分类：</label><br />
+                                <select id="productvendor" class="full" name="productvendor">
+                                    <option value="1" selected>行业新闻</option>
+                                    <option value="2">公司新闻</option>
+                                </select>
+                            </p>
+                        </div>
+
+                        <!--右边-->
+                        <div class="column width3">
+                            <p>
+                                <label for="About">文章作者：</label><br />
+                                <input type="text" id="About" name="About" class="full" value="@Model.About" />
+                            </p>
+
+                            <p>
+                                <label for="SourceName">文章来源：</label><br />
+                                <input type="text" id="SourceName" name="SourceName" class="full" value="@Model.SourceName" />
+                            </p>
+
+                            <p>
+                                <label for="SourceLink">来源链接：</label><br />
+                                <input type="text" id="SourceLink" name="SourceLink" class="full" value="@Model.SourceLink" />
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="box">
+                        <input type="submit" class="btn btn-green big" value="保存" />
+                        或 <a href="@Url.Content("~/Article/Index")" class="btn big">取消</a>
+                    </p>
+                </fieldset>
+            </form>
+        </section>
+        <!-- 左边分部小节结束 -->
+        <!-- 右边分部小节开始 -->
+        <aside class="column width2">
+
+             <!--快捷菜单-->
+            @Html.Partial("Custom/QuickMenu", new List<Smart.Admin.Models.Custom.QuickMenu>()
+       {
+           new Smart.Admin.Models.Custom.QuickMenu(){ 
+               Icon="~/Content/img/style.png", 
+               Link="~/Article/Index",
+               LinkText="文章列表", 
+               Description="管理已发布的文章。"},
+           new Smart.Admin.Models.Custom.QuickMenu(){ 
+               Icon="~/Content/img/style.png", 
+               Link="~/Article/Add",
+               LinkText="添加文章", 
+               Description="添加一篇文章。"}
+       })
+            <!--实用的提示信息-->
+            @Html.Partial("Custom/Tips", new Smart.Admin.Models.Custom.Tips()
+       {
+           Title = "提示信息",
+           Content = "这里描述一段实用的便捷描述文字信息。",
+           LinkText = "w3schools.com",
+           Link = "w3schools.com"
+       })
+        </aside>
+        <!-- 右边分部小节结束 -->
+    </div>
+    <!-- End of Wrapper -->
+</div>
+<!-- End of Page content -->
+
+<script type="text/javascript">
+    $(function () {
+
+        /*文章内容编辑框*/
+        $('#Content').wysiwyg({
+            controls: {
+                strikeThrough: {
+                    visible: true
+                },
+                underline: {
+                    visible: true
+                },
+
+                justifyLeft: {
+                    visible: true
+                },
+                justifyCenter: {
+                    visible: true
+                },
+                justifyRight: {
+                    visible: true
+                },
+                justifyFull: {
+                    visible: true
+                },
+
+                indent: {
+                    visible: true
+                },
+                outdent: {
+                    visible: true
+                },
+
+                subscript: {
+                    visible: true
+                },
+                superscript: {
+                    visible: true
+                },
+
+                undo: {
+                    visible: true
+                },
+                redo: {
+                    visible: true
+                },
+
+                insertOrderedList: {
+                    visible: true
+                },
+                insertUnorderedList: {
+                    visible: true
+                },
+                insertHorizontalRule: {
+                    visible: true
+                },
+
+                h4: {
+                    visible: true,
+                    className: 'h4',
+                    command: $.browser.msie ? 'formatBlock' : 'heading',
+                    arguments: [$.browser.msie ? '<h4>' : 'h4'],
+                    tags: ['h4'],
+                    tooltip: 'Header 4'
+                },
+                h5: {
+                    visible: true,
+                    className: 'h5',
+                    command: $.browser.msie ? 'formatBlock' : 'heading',
+                    arguments: [$.browser.msie ? '<h5>' : 'h5'],
+                    tags: ['h5'],
+                    tooltip: 'Header 5'
+                },
+                h6: {
+                    visible: true,
+                    className: 'h6',
+                    command: $.browser.msie ? 'formatBlock' : 'heading',
+                    arguments: [$.browser.msie ? '<h6>' : 'h6'],
+                    tags: ['h6'],
+                    tooltip: 'Header 6'
+                },
+
+                cut: {
+                    visible: true
+                },
+                copy: {
+                    visible: true
+                },
+                paste: {
+                    visible: true
+                },
+                html: {
+                    visible: true
+                }
+            }
+        });
+
+        /*表单验证*/
+        var validator = $("#from").validate({
+            rules: {
+                ArticleTitle: {
+                    required: true,
+                    minlength: 4
+                },
+                Content: {
+                    required: true,
+                    minlength: 50,
+                    maxlength: 8000
+                },
+                Summary: {
+                    required: true,
+                    minlength: 4,
+                    maxlength: 200
+                },
+                PublishTime: {
+                    required: true,
+                },
+                About: {
+                    required: true,
+                }
+            },
+            messages: {
+                ArticleTitle: {
+                    required: "输入文章标题",
+                    minlength: jQuery.format("请输入至少 {0} 个字符")
+                },
+                Content: {
+                    required: "输入文章内容",
+                    minlength: jQuery.format("请输入至少 {0} 个字符"),
+                    maxlength: jQuery.format("最多输入 {0} 个字符")
+                },
+                Summary: {
+                    required: "输入文章摘要",
+                    minlength: jQuery.format("请输入至少 {0} 个字符"),
+                    maxlength: jQuery.format("最多输入 {0} 个字符")
+                },
+                PublishTime: {
+                    required: "请输入发布时间"
+                },
+                About: {
+                    required: "请输入编辑作者"
+                }
+            },
+            errorPlacement: function (error, element) {
+                error.insertAfter(element.parent().find('label:first'));
+            },
+            submitHandler: function () {
+                from.submit();
+            },
+            success: function (label) {
+                label.html("&nbsp;").addClass("ok");
+            }
+        });
+    });
+</script>

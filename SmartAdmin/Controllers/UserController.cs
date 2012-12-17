@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Smart.Admin;
+using System.Data;
 
 namespace Smart.Admin.Controllers
 {
@@ -14,14 +15,17 @@ namespace Smart.Admin.Controllers
     /// </summary>
     [Filter.DefaultAuthorizationFilter]
     [Filter.DefaultLoggerActionFilter]
+    [Filter.DefaultExceptionFilter]
     public class UserController : Controller
     {
-        //
-        // GET: /User/
+        private Smart.Admin.Models.SmartAdminDB smartAdminDB = new Models.SmartAdminDB();
 
         public ActionResult Index()
         {
-            return View();
+            var data = from m in smartAdminDB.Users
+                       select m;
+
+            return View(data);
         }
 
         [HttpGet]
@@ -45,20 +49,123 @@ namespace Smart.Admin.Controllers
         [HttpPost]
         public ActionResult Add(Models.User model)
         {
-            return View();
+            //解决Checkbox无法获取值问题
+            model.OnLine = false;
+            if (Request.Form["OnLine"].ToString().ToLower() == "true")
+            {
+                model.OnLine = true;
+            }
+            model.MutileOnLine = false;
+            if (Request.Form["MutileOnLine"].ToString().ToLower() == "true")
+            {
+                model.MutileOnLine = true;
+            }
+
+            smartAdminDB.Users.Add(model);
+
+            string message = "";
+
+            if (smartAdminDB.SaveChanges() > 0)
+            {
+                message = "添加用户成功。";
+            }
+            else
+            {
+                message = "添加用户失败。";
+            }
+
+            return RedirectToAction("Alert", new
+            {
+                callBackUrl = "~/User/Add",
+                title = "添加用户提示",
+                content = message
+            });
         }
 
         [HttpGet]
-        public ActionResult Del()
+        public ActionResult Edit(string userName)
         {
-            return View();
+            var data = from m in smartAdminDB.Users
+                       where m.UserName == userName
+                       select m;
+
+            return View(data.First<Models.User>());
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Models.User model)
+        {
+            //解决checkbox值获取不到的问题
+            model.OnLine = true;
+            if (Request.Form["OnLine"] == null)
+            {
+                model.OnLine = false;
+            }
+
+            model.MutileOnLine = true;
+            if (Request.Form["MutileOnLine"] == null)
+            {
+                model.MutileOnLine = false;
+            }
+
+            smartAdminDB.Users.Attach(model);
+
+            //更改缓存修改状态
+            smartAdminDB.Entry(model).State = EntityState.Modified;
+
+            string message = "";
+
+            if (smartAdminDB.SaveChanges() > 0)
+            {
+                message = "保存用户成功。";
+            }
+            else
+            {
+                message = "保存用户失败。";
+            }
+
+            return RedirectToAction("Alert", new
+            {
+                callBackUrl = "~/User/Index",
+                title = "保存用户提示",
+                content = message
+            });
         }
 
         [HttpGet]
-        public ActionResult List(int currentPage,int pageSize)
+        public ActionResult Del(string userName)
         {
-            return View();
+            var data = from m in smartAdminDB.Users
+                       where m.UserName == userName
+                       select m;
+
+            smartAdminDB.Users.Remove(data.First<Smart.Admin.Models.User>());
+
+            string message = "";
+
+            if (smartAdminDB.SaveChanges() > 0)
+            {
+                message = "删除用户成功。";
+            }
+            else
+            {
+                message = "删除用户失败。";
+            }
+
+            return RedirectToAction("Alert", new
+            {
+                callBackUrl = "~/User/Index",
+                title = "删除用户提示",
+                content = message
+            });
         }
 
+        public ActionResult Alert(string callBackUrl, string title, string content)
+        {
+            this.ViewBag.ReferenceUrl = callBackUrl;
+            this.ViewBag.Title = title;
+            this.ViewBag.Content = content;
+            return View();
+        }
     }
 }

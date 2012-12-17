@@ -128,7 +128,7 @@
                 <div class="box box-info">
                     @if (ViewBag.Message == null || ViewBag.Message == "")
                     {
-                        <p>请输入用户名和密码登录系统。</p>
+                        <p>请输入用户名和密码登录系统。如果您是首次访问，请“<a href="@Url.Content("~/System/Install")">点此连接</a>”以进行安装。</p>
                     }
                     else
                     {

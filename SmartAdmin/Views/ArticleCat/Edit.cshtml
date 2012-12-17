@@ -1,0 +1,108 @@
+﻿@model Smart.Admin.Models.ArticleCat
+@{
+    ViewBag.Title = "编辑类目";
+}
+<!-- Page title -->
+<div id="pagetitle">
+    <div class="wrapper">
+        <h1>类目管理 &rarr; <span>编辑类目</span></h1>
+        <!-- Quick search box -->
+        <form action="" method="get">
+            <input class="" type="text" id="q" name="q" value="请输入搜索关键字" />
+        </form>
+    </div>
+</div>
+<!-- End of Page title -->
+<!-- Page content -->
+<div id="page">
+    <!-- Wrapper -->
+    <div class="wrapper">
+        <!-- 左边分部小节开始 -->
+        <section class="column width6 first">
+            <h3>功能简介</h3>
+            <div class="box box-info">
+                编辑文章类目。
+            </div>
+            <form id="from" name="from" method="post" action="@Url.Content("~/ArticleCat/Edit")" accept-charset="utf-8">
+                <fieldset>
+                    <legend>文章信息</legend>
+                    <p>
+                        <label class="required" for="ArticleTitle">文章标题：</label><br />
+                        <input type="hidden" id="ID" name="ID" value="@Model.Cid" />
+                        <input type="text" id="ArticleTitle" name="ArticleTitle" class="full" value="" />
+                    </p>
+
+                    <div class="clearfix leading">
+                        <!--左边-->
+                        <div class="column width3 first">
+                            <p>
+                                <label for="Keywords">关键字：</label><br />
+                                <input type="text" id="Keywords" name="Keywords" class="full" value="" />
+                            </p>
+                        </div>
+
+                        <!--右边-->
+                        <div class="column width3">
+                            <p>
+                                <label for="About">文章作者：</label><br />
+                                <input type="text" id="About" name="About" class="full" value="" />
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="box">
+                        <input type="submit" class="btn btn-green big" value="保存" />
+                        或 <a href="@Url.Content("~/ArticleCat/Index")" class="btn big">取消</a>
+                    </p>
+                </fieldset>
+            </form>
+        </section>
+        <!-- 左边分部小节结束 -->
+        <!-- 右边分部小节开始 -->
+        <aside class="column width2">
+
+            @Html.Partial("_QuickMenu")
+
+            <div class="content-box">
+                <header>
+                    <h3>便捷信息</h3>
+                </header>
+                <section>
+                    <q>这里描述一段实用的便捷描述文字信息。 <cite>w3schools.com</cite></q>
+                </section>
+            </div>
+        </aside>
+        <!-- 右边分部小节结束 -->
+    </div>
+    <!-- End of Wrapper -->
+</div>
+<!-- End of Page content -->
+
+<script type="text/javascript">
+    $(function () {
+        /*表单验证*/
+        var validator = $("#from").validate({
+            rules: {
+                ArticleTitle: {
+                    required: true,
+                    minlength: 4
+                }
+            },
+            messages: {
+                ArticleTitle: {
+                    required: "输入文章标题",
+                    minlength: jQuery.format("请输入至少 {0} 个字符")
+                }
+            },
+            errorPlacement: function (error, element) {
+                error.insertAfter(element.parent().find('label:first'));
+            },
+            submitHandler: function () {
+                from.submit();
+            },
+            success: function (label) {
+                label.html("&nbsp;").addClass("ok");
+            }
+        });
+    });
+</script>

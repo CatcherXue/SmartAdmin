@@ -12,6 +12,7 @@ namespace Smart.Admin.Controllers
     /// </summary>
     [Filter.DefaultAuthorizationFilter]
     [Filter.DefaultLoggerActionFilter]
+    [Filter.DefaultExceptionFilter]
     public class UpdateController : Controller
     {
         //

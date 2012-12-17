@@ -1,61 +1,110 @@
-﻿@{
-    ViewBag.Title = "访问异常";
+﻿@model System.Web.Mvc.HandleErrorInfo
+@{
+    Layout = null;
+    ViewBag.Title = "访问出错啦";
 }
-<!-- Page title -->
-<div id="pagetitle">
-    <div class="wrapper">
-        <h1>访问异常 &rarr; <span>主页</span></h1>
-        <!-- Quick search box -->
-        <form action="" method="get">
-            <input class="" type="text" id="q" name="q" value="请输入搜索关键字"/>
-        </form>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>访问异常 - 网站后台管理系统V1.0.1</title>
+    <meta name="description" content="访问异常" />
+    <meta name="keywords" content="访问异常" />
+    <!-- Favicons -->
+    <link rel="shortcut icon" type="image/png" href="@Url.Content("~/content/img/favicons/favicon.png")" />
+    <link rel="icon" type="image/png" href="@Url.Content("~/content/img/favicons/favicon.png")" />
+    <link rel="apple-touch-icon" href="@Url.Content("~/content/img/favicons/apple.png")" />
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="@Url.Content("~/content/css/style.css")" type="text/css" />
+    <!-- Your Custom Stylesheet -->
+    <link rel="stylesheet" href="@Url.Content("~/content/css/custom.css")" type="text/css" />
+    <!--swfobject - needed only if you require <video> tag support for older browsers -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/swfobject.js")"></script>
+    <!-- jQuery with plugins -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery-1.4.2.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.ui.core.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.ui.widget.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.ui.tabs.min.js")"></script>
+    <!-- jQuery tooltips -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.tipTip.min.js")"></script>
+    <!-- Superfish navigation -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.superfish.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.supersubs.min.js")"></script>
+    <!-- jQuery form validation -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.validate_pack.js")"></script>
+    <!-- jQuery popup box -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.nyroModal.pack.js")"></script>
+    <!-- Internet Explorer Fixes -->
+    <!--[if IE]>
+		<link rel="stylesheet" type="text/css" media="all" href="css/ie.css"/>
+		<script src="js/html5.js"></script>
+		<![endif]-->
+    <!--Upgrade MSIE5.5-7 to be compatible with MSIE8: http://ie7-js.googlecode.com/svn/version/2.1(beta3)/IE8.js -->
+    <!--[if lt IE 8]>
+		<script src="js/IE8.js"></script>
+		<![endif]-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+        });
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header id="top">
+        <div class="wrapper-login">
+            <!-- Title/Logo - can use text instead of image -->
+            <div id="title">
+                <img src="@Url.Content("~/content/img/logo.png")" alt="Administry" />
+            </div>
+            <!-- Main navigation -->
+            <nav id="menu">
+                <ul class="sf-menu">
+                    <li class="current"><a href="@Url.Content("~/System/Install")">访问异常</a> </li>
+                </ul>
+            </nav>
+            <!-- End of Main navigation -->
+            <!-- Aside links -->
+            <aside>
+                <b>简体中文</b><!-- &middot; <a href="#">English</a>-->
+            </aside>
+            <!-- End of Aside links -->
+        </div>
+    </header>
+    <!-- End of Header -->
+    <!-- Page title -->
+    <div id="pagetitle">
+        <div class="wrapper-login">
+        </div>
     </div>
-</div>
-<!-- End of Page title -->
-<!-- Page content -->
-<div id="page">
-    <!-- Wrapper -->
-    <div class="wrapper">
-        <!-- 左边分部小节开始 -->
-        <section class="column width6 first">
-            <h3>功能简介</h3>
-            <div class="box box-info">
-                处理用户访问过程中的所有异常处理。
-            </div>
-        </section>
-        <!-- 左边分部小节结束 -->
+    <!-- End of Page title -->
+    <!-- Page content -->
+    <div id="page">
+        <!-- Wrapper -->
+        <div class="wrapper-login">
+            <!-- 数据库配置 -->
+            <section class="full">
+                <h3>访问异常</h3>
+                <div class="box box-info">
+                    显示异常信息。
+                </div>
 
-
-        <!-- 右边分部小节开始 -->
-        <aside class="column width2">
-            <div id="rightmenu">
-                <header>
-                    <h3>快捷操作</h3>
-                </header>
-                <dl class="first">
-                    <dt>
-                        <img width="16" height="16" alt="Basic styles" src="@Url.Content("~/Content/img/style.png")">
-                    </dt>
-                    <dd>
-                        <a href="#">基础样式</a>
-                    </dd>
-                    <dd class="last">
-                        这里是一段描述文字信息。
-                    </dd>
-                </dl>
-            </div>
-            <div class="content-box">
-                <header>
-                    <h3>便捷信息</h3>
-                </header>
-                <section>
-                    <q>这里描述一段实用的便捷描述文字信息。
-                    <cite>w3schools.com</cite></q>
-                </section>
-            </div>
-        </aside>
-        <!-- 右边分部小节结束 -->
+                show exception information.
+            </section>
+            <!-- 数据库配置 -->
+        </div>
+        <!-- End of Wrapper -->
     </div>
-    <!-- End of Wrapper -->
-</div>
-<!-- End of Page content -->
+    <!-- End of Page content -->
+    <!-- Page footer -->
+    <footer id="bottom">
+        <div class="wrapper-login">
+            <p>
+                Copyright &copy; 2012 <b><a href="#" title="">SmartAdmin</a></b>
+            </p>
+        </div>
+    </footer>
+    <!-- End of Page footer -->
+    <!-- User interface javascript load -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/administry.js")"></script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+﻿@model Smart.Admin.Models.User
+@{
+    ViewBag.Title = "编辑用户";
+}
+<!-- Page title -->
+<div id="pagetitle">
+    <div class="wrapper">
+        <h1>
+            用户管理 &rarr; <span>编辑用户</span></h1>
+        <!-- Quick search box -->
+        <form action="" method="get">
+        <input class="" type="text" id="q" name="q" value="请输入搜索关键字" />
+        </form>
+    </div>
+</div>
+<!-- End of Page title -->
+<!-- Page content -->
+<div id="page">
+    <!-- Wrapper -->
+    <div class="wrapper">
+        <!-- 左边分部小节开始 -->
+        <section class="column width6 first">
+            <h3>
+                功能简介</h3>
+            <div class="box box-info">
+                编辑用户信息。
+            </div>
+            <form id="from" name="from" method="post" action="@Url.Content("~/User/Edit")">
+            <fieldset>
+                <legend>用户信息</legend>
+                <p>
+                    <label class="required" for="username">
+                        用户账号：</label>
+                    <br />
+                    <input type="text" id="username" name="username" class="half" 
+                            value="@Model.UserName" />
+                </p>
+                <p>
+                    <label class="required" for="Nick">
+                        用户昵称：</label>
+                    <br />
+                    <input id="Nick" name="Nick" type="text" class="half" 
+                            value="@Model.Nick" />
+                </p>
+                <p>
+                    <label class="required" for="password">
+                        账户密码：</label>
+                    <br />
+                    <input id="password" name="password" type="text" class="half" 
+                            value="@Model.Password" />
+                </p>
+                <p>
+                    <label class="required" for="password_confirm">
+                        重复密码：</label>
+                    <br />
+                    <input id="password_confirm" name="password_confirm" type="text" class="half" 
+                            value="@Model.Password"/>
+                    <small>再次输入密码</small>
+                </p>
+                <p>
+                    <label class="required" for="EmailAddress">
+                        电子邮件：</label>
+                    <br />
+                    <input id="EmailAddress" name="EmailAddress" type="text" class="half"
+                            value="@Model.EmailAddress" />
+                </p>
+                <p>
+                    <label class="required" for="RegisterDate">
+                        注册时间：</label>
+                    <br />
+                    <input id="RegisterDate" name="RegisterDate" type="text" class="half"
+                            value="@Model.RegisterDate.ToString("yyyy-MM-dd HH:mm:ss")" />
+                </p>
+                <p>
+                    <label class="required" for="EndLoginDate">
+                        最后登录：</label>
+                    <br />
+                    <input id="EndLoginDate" name="EndLoginDate" type="text" class="half" 
+                            value="@Model.EndLoginDate.ToString("yyyy-MM-dd HH:mm:ss")" />
+                </p>
+                <p>
+                    <label class="required" for="UserRole">
+                        用户角色：</label>
+                    <br />
+                    <select id="UserRole" class="half" name="UserRole">
+                        <option value="1">超级管理员</option>
+                        <option value="2">工作职员</option>
+                        <option value="3">普通用户</option>
+                    </select>
+                </p>
+                <p>
+                    <label class="required" for="CurrentIPAddress">
+                        当前登录IP：</label>
+                    <br />
+                    <input id="CurrentIPAddress" name="CurrentIPAddress" type="text" class="half" 
+                            readonly="true" value="@Model.CurrentIPAddress"/>
+                </p>
+                <p>
+                    <label class="required" for="OnLine">
+                        登录状态：</label>
+                    <br />
+                    @{
+                        string checkedText = "checked=\"checked\"";
+                    }
+                    <input type="checkbox" name="OnLine" @if (Model.OnLine)
+                                                         {  @Html.Raw(checkedText);
+                                                         }
+                                                          value="@Model.OnLine"/>
+                    <label>
+                        是否在线</label>
+                    <input type="checkbox" name="MutileOnLine" @if (Model.MutileOnLine)
+                                                               { @Html.Raw(checkedText);
+                                                               }
+                                                                value="@Model.MutileOnLine"/>
+                    <label>
+                        多处登录</label>
+                </p>
+                <p class="box">
+                    <input type="submit" class="btn btn-green big" value="保存" />
+                    或 <a href="@Url.Content("~/User/Index")" class="btn big">取消</a>
+                </p>
+            </fieldset>
+            </form>
+        </section>
+        <!-- 左边分部小节结束 -->
+        <!-- 右边分部小节开始 -->
+        <aside class="column width2">
+            <!--快捷菜单-->
+            @Html.Partial("Custom/QuickMenu", new List<Smart.Admin.Models.Custom.QuickMenu>()
+       {
+           new Smart.Admin.Models.Custom.QuickMenu(){ 
+               Icon="~/Content/img/style.png", 
+               Link="~/User/Index",
+               LinkText="用户列表", 
+               Description="管理用户信息。"},
+           new Smart.Admin.Models.Custom.QuickMenu(){ 
+               Icon="~/Content/img/style.png", 
+               Link="~/User/Add",
+               LinkText="添加用户", 
+               Description="添加一个用户。"}
+       })
+            <!--实用的提示信息-->
+            @Html.Partial("Custom/Tips", new Smart.Admin.Models.Custom.Tips()
+       {
+           Title = "提示信息",
+           Content = "这里描述一段实用的便捷描述文字信息。",
+           LinkText = "w3schools.com",
+           Link = "w3schools.com"
+       })
+        </aside>
+        <!-- 右边分部小节结束 -->
+    </div>
+    <!-- End of Wrapper -->
+</div>
+<!-- End of Page content -->
+<script type="text/javascript">
+    $(function () {
+        // validate form on keyup and submit
+        var validator = $("#from").validate({
+            rules: {
+                username: {
+                    required: true,
+                    minlength: 4
+                },
+                Nick: {
+                    required: true,
+                    minlength: 2
+                },
+                password: {
+                    required: true,
+                    minlength: 6
+                },
+                password_confirm: {
+                    required: true,
+                    minlength: 6,
+                    equalTo: "#password"
+                },
+                RegisterDate: {
+                    required: true
+                },
+                EmailAddress: {
+                    required: false, /*修改Email地址允许为空*/
+                    email: true
+                },
+                EndLoginDate: {
+                    required: true
+                }
+            },
+            messages: {
+                username: {
+                    required: "输入用户账号",
+                    minlength: jQuery.format("请输入至少 {0} 个字符")
+                },
+                Nick: {
+                    required: "输入用户昵称",
+                    minlength: jQuery.format("请输入至少 {0} 个字符")
+                },
+                password: {
+                    required: "输入你的密码",
+                    rangelength: jQuery.format("请输入至少 {0} 个字符")
+                },
+                password_confirm: {
+                    required: "重复输入你的密码",
+                    minlength: jQuery.format("请输入至少 {0} 个字符"),
+                    equalTo: "输入上述相同的密码"
+                },
+                RegisterDate: {
+                    required: "请输入您的账户注册日期"
+                },
+                EmailAddress: {
+                    required: "请输入您的电子邮箱地址"
+                },
+                EndLoginDate: {
+                    required: "请输入您的账户最后登录日期"
+                }
+            },
+            errorPlacement: function (error, element) {
+                error.insertAfter(element.parent().find('label:first'));
+            },
+            submitHandler: function () {
+                from.submit();
+            },
+            success: function (label) {
+                label.html("&nbsp;").addClass("ok");
+            }
+        });
+    });
+</script>

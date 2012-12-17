@@ -46,14 +46,17 @@
   <ItemGroup>
     <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\Program Files\Microsoft ADO.NET Entity Framework 4.1\Binaries\EntityFramework.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\..\GitHub\SmartAdmin\SmartAdmin\bin\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.6.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Smart.Utility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Smart.Utility.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.WebPages" />
     <Reference Include="System.Web.Helpers" />
@@ -79,6 +82,7 @@
   <ItemGroup>
     <Compile Include="AdminAreaRegistration.cs" />
     <Compile Include="Controllers\AnalysisController.cs" />
+    <Compile Include="Controllers\ArticleCatController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\AttachmentController.cs" />
     <Compile Include="Controllers\BackupController.cs" />
@@ -101,10 +105,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Article.cs" />
+    <Compile Include="Models\ArticleCat.cs" />
     <Compile Include="Models\Backup.cs" />
     <Compile Include="Models\Configuration.cs" />
+    <Compile Include="Models\Custom\QuickMenu.cs" />
+    <Compile Include="Models\Custom\Tips.cs" />
+    <Compile Include="Models\InitData.cs" />
     <Compile Include="Models\Interface.cs" />
     <Compile Include="Models\Logger.cs" />
+    <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\Security.cs" />
     <Compile Include="Models\SmartAdminDB.cs" />
     <Compile Include="Models\System.cs" />
@@ -221,7 +231,6 @@
     <Content Include="Scripts\MicrosoftMvcValidation.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
@@ -289,16 +298,55 @@
     <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Exception\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Article\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\User\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\User\_QuickMenu.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\User\Del.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\User\Alert.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\System\InstallDataBase.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\System\NoThanks.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Article\Alert.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Article\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Exception\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ArticleCat\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ArticleCat\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ArticleCat\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ArticleCat\Alert.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ArticleCat\_QuickMenu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Custom\Tips.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Custom\QuickMenu.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

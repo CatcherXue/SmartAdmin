@@ -75,20 +75,25 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap\css\bootstrap-responsive.css" />
-    <Content Include="Content\bootstrap\css\bootstrap-responsive.min.css" />
-    <Content Include="Content\bootstrap\css\bootstrap.css" />
-    <Content Include="Content\bootstrap\css\bootstrap.min.css" />
-    <Content Include="Content\bootstrap\img\glyphicons-halflings-white.png" />
-    <Content Include="Content\bootstrap\img\glyphicons-halflings.png" />
-    <Content Include="Content\bootstrap\js\bootstrap.js" />
-    <Content Include="Content\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\css\main.css" />
     <Content Include="Content\icon\favicon.ico" />
-    <Content Include="Content\images\slide-01.jpg" />
-    <Content Include="Content\images\slide-02.jpg" />
-    <Content Include="Content\images\slide-03.jpg" />
+    <Content Include="Content\images\banner.jpg" />
+    <Content Include="Content\images\bodybg.jpg" />
+    <Content Include="Content\images\bottom.jpg" />
+    <Content Include="Content\images\leftbg1.jpg" />
+    <Content Include="Content\images\leftbg2.jpg" />
+    <Content Include="Content\images\line2.gif" />
+    <Content Include="Content\images\logo.gif" />
+    <Content Include="Content\images\lxwm.jpg" />
+    <Content Include="Content\images\nav-bg.jpg" />
+    <Content Include="Content\images\nav-hor.jpg" />
+    <Content Include="Content\images\nav-x.jpg" />
+    <Content Include="Content\images\nav-xbg.jpg" />
+    <Content Include="Content\images\newtit.gif" />
+    <Content Include="Content\images\rban.jpg" />
+    <Content Include="Content\images\topbg.jpg" />
+    <Content Include="Content\images\yd.jpg" />
     <Content Include="Content\jquery\jquery.js" />
-    <Content Include="Content\main.css" />
     <Content Include="Global.asax" />
     <Content Include="SmartPortal.Publish.xml" />
     <Content Include="Web.config" />
@@ -98,40 +103,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Content\themes\base\jquery-ui.css" />
-    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
-    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
-    <Content Include="Scripts\jquery-1.4.4.js" />
-    <Content Include="Scripts\jquery-1.4.4.min.js" />
-    <Content Include="Scripts\jquery-1.4.4-vsdoc.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery-ui.js" />
-    <Content Include="Scripts\jquery-ui.min.js" />
-    <Content Include="Scripts\MicrosoftAjax.js" />
-    <Content Include="Scripts\MicrosoftAjax.debug.js" />
-    <Content Include="Scripts\MicrosoftMvcAjax.js" />
-    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
-    <Content Include="Scripts\MicrosoftMvcValidation.js" />
-    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
@@ -155,6 +127,13 @@
     <None Include="Properties\PublishProfiles\Publish.pubxml" />
     <Content Include="Views\Shared\_CopyRight.cshtml" />
     <Content Include="Views\Shared\_Menu.cshtml" />
+    <Content Include="Views\Shared\_Hander.cshtml" />
+    <Content Include="Views\Shared\Custom\ProductItem.cshtml" />
+    <Content Include="Views\Shared\Custom\ArticleItem.cshtml" />
+    <Content Include="Views\Shared\Custom\ProductView.cshtml" />
+    <Content Include="Views\Shared\Custom\ArticleView.cshtml" />
+    <Content Include="Views\Shared\Custom\ArticleList.cshtml" />
+    <Content Include="Views\Shared\Custom\ArticleDetail.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

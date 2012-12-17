@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Smart.Admin.Models.Custom.QuickMenu>
+@{
+    Layout = null;
+}
+<div id="rightmenu">
+    <header>
+        <h3>
+            快捷菜单</h3>
+    </header>
+    @foreach (var data in Model)
+    {
+        <dl class="first">
+            <dt>
+                <img width="16" height="16" alt="Basic styles" src="@Url.Content(data.Icon)">
+            </dt>
+            <dd>
+                <a href="@Url.Content(data.Link)">@data.LinkText</a>
+            </dd>
+            <dd class="last">
+                @data.Description
+            </dd>
+        </dl>
+    }
+</div>

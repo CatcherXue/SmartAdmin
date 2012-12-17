@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Smart.Admin.Models.ArticleCat>
+@{
+    ViewBag.Title = "类目管理";
+}
+<!-- Page title -->
+<div id="pagetitle">
+    <div class="wrapper">
+        <h1>类目管理 &rarr; <span>主页</span></h1>
+        <!-- Quick search box -->
+        <form action="" method="get">
+            <input class="" type="text" id="q" name="q" value="请输入搜索关键字" />
+        </form>
+    </div>
+</div>
+<!-- End of Page title -->
+<!-- Page content -->
+<div id="page">
+    <!-- Wrapper -->
+    <div class="wrapper">
+        <!-- 左边分部小节开始 -->
+        <section class="column width6 first">
+            <h3>功能简介</h3>
+            <div class="box box-info">
+                管理网站文章类目。
+            </div>
+            <!--文章列表开始-->
+            <h3>文章列表</h3>
+            <table class="display stylized" id="example">
+                <thead>
+                    <tr>
+                        <th>类目名称</th>
+                        <th>父级分类</th>
+                        <th>排序</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Smart.Admin.Models.ArticleCat entity in Model)
+                    {
+                        <tr>
+                            <td>@entity.Name</td>
+                            <td>@entity.IsParent</td>
+                            <td>@entity.Order</td>
+                            <td>@entity.Status</td>
+                            <td>
+                                <a href="@Url.Content("~/ArticleCat/Edit?cid=")@entity.Cid">编辑</a>|
+                                <a href="@Url.Content("~/ArticleCat/Del?cid=")@entity.Cid">删除</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>类目名称</th>
+                        <th>父级分类</th>
+                        <th>排序</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </tfoot>
+            </table>
+            <div class="clear">
+                &nbsp;
+            </div>
+            <!--文章列表结束-->
+        </section>
+        <!-- 左边分部小节结束 -->
+        <!-- 右边分部小节开始 -->
+        <aside class="column width2">
+
+            @Html.Partial("_QuickMenu")
+
+            <div class="content-box">
+                <header>
+                    <h3>便捷信息</h3>
+                </header>
+                <section>
+                    <q>这里描述一段实用的便捷描述文字信息。 <cite>w3schools.com</cite></q>
+                </section>
+            </div>
+        </aside>
+        <!-- 右边分部小节结束 -->
+    </div>
+    <!-- End of Wrapper -->
+</div>
+<!-- End of Page content -->
+<script type="text/javascript">
+    $(function () {
+        /* datatable */
+        $('#example').dataTable();
+    });
+</script>

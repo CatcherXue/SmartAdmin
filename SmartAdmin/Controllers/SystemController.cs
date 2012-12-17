@@ -13,6 +13,7 @@ namespace Smart.Admin.Controllers
     /// 提供系统安装、维护等功能。
     /// </summary>
     [Filter.DefaultLoggerActionFilter]
+    [Filter.DefaultExceptionFilter]
     public class SystemController : Controller
     {
         Models.SmartAdminDB smartAdminDB = new Models.SmartAdminDB();
@@ -84,9 +85,17 @@ namespace Smart.Admin.Controllers
             }
 
             //校验用户名和密码
+            var data = from m in smartAdminDB.Users
+                       where m.UserName == username && m.Password == password
+                       select m;
 
-            //校验通过
-
+            //用户不存在
+            if (data.Count<Smart.Admin.Models.User>() <= 0)
+            {
+                ViewBag.Message = "用户名或密码错误，请重新登录";
+                return View("~/Views/System/Login.cshtml");
+            }
+            
             //一周内免登陆设置
             if (remember == "1")
             {
@@ -166,6 +175,26 @@ namespace Smart.Admin.Controllers
             ms = null;
             image.Dispose();
             image = null;
+        }
+
+        /// <summary>
+        /// 安装数据库
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult InstallDataBase()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// 退出系统安装，进入反馈页面
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult NoThanks()
+        {
+            return View();
         }
     }
 }

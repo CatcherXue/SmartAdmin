@@ -1,0 +1,13 @@
+﻿@model Smart.Admin.Models.Custom.Tips
+@{
+    Layout = null;
+}
+<div class="content-box">
+    <header>
+        <h3>@Model.Title</h3>
+    </header>
+    <section>
+        <q>@Model.Content<cite> <a href="https://@Model.Link" target="_blank">@Model.LinkText</a>
+        </cite></q>
+    </section>
+</div>

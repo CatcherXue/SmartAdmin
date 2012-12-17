@@ -12,13 +12,9 @@ namespace Smart.Admin.Controllers
     [Filter.DefaultLoggerActionFilter]
     public class ExceptionController : Controller
     {
-        //
-        // GET: /Exception/
-
         public ActionResult Index()
         {
             return View();
         }
-
     }
 }
