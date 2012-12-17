@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "网站首页";
+    ViewBag.Title = "新闻资讯";
 }
 <!--left开始-->
 <div id="left">
@@ -16,19 +16,18 @@
         <!--tit开始-->
         <div class="tit">
             <div class="titleft">
-                公司介绍
+                详情介绍
             </div>
             <div class="titright" style="margin-top: -7px;">
                 <img src="@Url.Content("~/Content/images/more.jpg")" border="0" />
             </div>
         </div>
         <!--tit结束-->
-
-        @Html.Partial("Custom/ArticleDetail")
-
-
-        @Html.Partial("Custom/ArticleView")
-        @Html.Partial("Custom/ProductView")
+        <!--示例内容-->
+        <div class="bj">
+            @Html.Partial("Custom/ArticleList")
+        </div>
+        <!--示例内容结束-->
     </div>
 </div>
 <!--right结束-->

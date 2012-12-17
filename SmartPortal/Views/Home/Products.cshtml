@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "产品展示";
+}
+<!--left开始-->
+<div id="left">
+    @Html.Partial("Custom/ProductItem")
+    @Html.Partial("Custom/ArticleItem")
+    <div class="productlist" style="margin-top: 8px;">
+        <img src="@Url.Content("../content/images/lxwm.jpg")" width="251" alt="" />
+    </div>
+</div>
+<!--left结束-->
+<!--right开始-->
+<div id="right" style="margin-top:-10px;">
+    @Html.Partial("Custom/ProductView")
+</div>
+<!--right结束-->

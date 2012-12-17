@@ -105,3 +105,24 @@ fixbug		修补分支
 
 建议新手阅读这篇文章
     http://rogerdudler.github.com/git-guide/index.zh.html
+
+#分子合并模式
+#添加一个远程版本库
+git remote add smartdevelop https://github.com/smartdevelop/SmartAdmin.git
+
+#获取远程版本库gotgithub的分支和提交
+git fetch smartdevelop
+
+#将远程分支合并到当前分支中
+git merge smartdevelop/master
+#git merge smartdevelop/develop
+
+#提交到本地仓库
+git add *
+git commit -m""
+
+#推送到服务器
+git push
+
+#更新到最新版本
+git pull

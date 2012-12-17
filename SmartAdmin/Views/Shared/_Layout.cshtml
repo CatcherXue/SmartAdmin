@@ -6,56 +6,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="description" content="@ViewBag.Description" />
     <meta name="keywords" content="@ViewBag.Keywords" />
-    <!-- Favicons -->
-    <link rel="shortcut icon" type="image/png" href="@Url.Content("~/Content/img/favicons/favicon.png")" />
-    <link rel="icon" type="image/png" href="@Url.Content("~/Content/img/favicons/favicon.png")" />
-    <link rel="apple-touch-icon" href="@Url.Content("~/Content/img/favicons/apple.png")" />
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="@Url.Content("~/Content/css/style.css")" type="text/css" />
-    <!-- Colour Schemes
-		Default colour scheme is blue. Uncomment prefered stylesheet to use it.
-		<link rel="stylesheet" href="css/brown.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="css/gray.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="css/green.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="css/pink.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="css/red.css" type="text/css" media="screen" />
-		-->
-    <!-- Your Custom Stylesheet -->
-    <link rel="stylesheet" href="@Url.Content("~/Content/css/custom.css")" type="text/css" />
-    <!--swfobject - needed only if you require <video> tag support for older browsers -->
-    <script type="text/javascript" src="@Url.Content("~/Content/js/swfobject.js")" ></script>
-    <!-- jQuery with plugins -->
-    <script type="text/javascript" src="@Url.Content("~/Content/js/jquery-1.4.2.min.js")"></script>
-    <!-- Could be loaded remotely from Google CDN : <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> -->
-    <script type="text/javascript" src="@Url.Content("~/Content/js/jquery.ui.core.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Content/js/jquery.ui.widget.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Content/js/jquery.ui.tabs.min.js")"></script>
-    <!-- jQuery tooltips -->
-    <script type="text/javascript" src="@Url.Content("~/Content/js/jquery.tipTip.min.js")"></script>
-    <!-- Superfish navigation -->
-    <script type="text/javascript" src="@Url.Content("~/Content/js/jquery.superfish.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Content/js/jquery.supersubs.min.js")"></script>
-    <!-- jQuery popup box -->
-    <script type="text/javascript" src="@Url.Content("~/Content/js/jquery.nyroModal.pack.js")"></script>
-    <!-- jQuery form validation -->
-    <script type="text/javascript" src="@Url.Content("~/Content/js/jquery.validate_pack.js")"></script>
-    <!-- jQuery tag input -->
-    <script type="text/javascript" src="@Url.Content("~/Content/js/jquery.tagInput.min.js")"></script>
-    <!-- jQuery wysiwyg editor -->
-    <script type="text/javascript" src="@Url.Content("~/Content/js/jquery.wysiwyg.min.js")"></script>
-    <!-- jQuery popup box -->
-    <script type="text/javascript" src="@Url.Content("~/Content/js/jquery.nyroModal.pack.js")"></script>
-    <!-- jQuery data tables -->
-    <script type="text/javascript" src="@Url.Content("~/Content/js/jquery.dataTables.min.js")"></script>
-    <!-- Internet Explorer Fixes -->
-    <!--[if IE]>
-		<link rel="stylesheet" type="text/css" media="all" href="css/ie.css"/>
-		<script src="js/html5.js"></script>
-		<![endif]-->
-    <!--Upgrade MSIE5.5-7 to be compatible with MSIE8: http://ie7-js.googlecode.com/svn/version/2.1(beta3)/IE8.js -->
-    <!--[if lt IE 8]>
-		<script src="js/IE8.js"></script>
-		<![endif]-->
+
+    <!--应用公共头文件-->
+    @Html.Partial("_ReferenceHead")
+
     <script type="text/javascript" lang="zh-cn">
         $(function () {
             Administry.setup();
@@ -78,9 +32,9 @@
             <!--导航菜单结束-->
             <!-- Aside links -->
             <aside>
-			    <b>简体中文</b> &middot; 
+                <b>简体中文</b> &middot; 
                 <a href="#">English</a>
-			</aside>
+            </aside>
             <!-- End of Aside links -->
         </div>
     </header>
@@ -90,14 +44,14 @@
     <footer id="bottom">
         <div class="wrapper">
             <nav>
-					<a href="@Url.Content("~/Article/Index")">文章管理</a>&middot;
+                <a href="@Url.Content("~/Article/Index")">文章管理</a>&middot;
                     <a href="@Url.Content("~/Product/Index")">产品管理</a>&middot;
                     <a href="@Url.Content("~/Picture/Index")">图片管理</a>&middot;
                     <a href="@Url.Content("~/Attachment/Index")">附件管理</a>&middot;
                     <a href="@Url.Content("~/LeaveMessage/Index")">留言管理</a>&middot;
                     <a href="@Url.Content("~/Contact/Index")">联系方式</a>&middot;
                     <a href="@Url.Content("~/Link/Index")">友情链接</a>
-				    </nav>
+            </nav>
             <p>
                 Copyright &copy; 2012 <b><a href="#" title="网站后台管理系统">网站后台管理系统</a></b> | Icons by
                 <a href="#">SmartBooks</a>
@@ -120,7 +74,5 @@
     <!-- End of Animated footer -->
     <!-- Scroll to top link -->
     <a href="#" id="totop">^滚动到顶部</a>
-    <!-- User interface javascript load -->
-    <script type="text/javascript" src="@Url.Content("~/Content/js/administry.js")"></script>
 </body>
 </html>

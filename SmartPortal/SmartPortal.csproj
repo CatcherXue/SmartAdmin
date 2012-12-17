@@ -45,6 +45,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Smart.Security">
+      <HintPath>..\..\SmartSecurity\bin\Debug\Smart.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Smart.Utility">
+      <HintPath>..\SmartAdmin\bin\Smart.Utility.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.WebPages" />
     <Reference Include="System.Web.Helpers" />
@@ -85,6 +91,7 @@
     <Content Include="Content\images\line2.gif" />
     <Content Include="Content\images\logo.gif" />
     <Content Include="Content\images\lxwm.jpg" />
+    <Content Include="Content\images\more.jpg" />
     <Content Include="Content\images\nav-bg.jpg" />
     <Content Include="Content\images\nav-hor.jpg" />
     <Content Include="Content\images\nav-x.jpg" />
@@ -95,7 +102,6 @@
     <Content Include="Content\images\yd.jpg" />
     <Content Include="Content\jquery\jquery.js" />
     <Content Include="Global.asax" />
-    <Content Include="SmartPortal.Publish.xml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -111,19 +117,14 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SmartAdmin\SmartAdmin.csproj">
-      <Project>{D6E561E0-04BF-4147-9D6B-0FFE768104BE}</Project>
-      <Name>SmartAdmin</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Web.config" />
     <None Include="Properties\PublishProfiles\Publish.pubxml" />
     <Content Include="Views\Shared\_CopyRight.cshtml" />
     <Content Include="Views\Shared\_Menu.cshtml" />
@@ -134,6 +135,26 @@
     <Content Include="Views\Shared\Custom\ArticleView.cshtml" />
     <Content Include="Views\Shared\Custom\ArticleList.cshtml" />
     <Content Include="Views\Shared\Custom\ArticleDetail.cshtml" />
+    <Content Include="Views\Home\CompanyProfile.cshtml" />
+    <Content Include="Views\Home\Products.cshtml" />
+    <Content Include="Views\Home\News.cshtml" />
+    <Content Include="Views\Home\ProductsLore.cshtml" />
+    <Content Include="Views\Home\SalesNetwork.cshtml" />
+    <Content Include="Views\Home\Service.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Jobs.cshtml" />
+    <Content Include="Views\Home\Links.cshtml" />
+    <Content Include="Views\Home\Statement.cshtml" />
+    <Content Include="Views\Home\LegalAffairs.cshtml" />
+    <Content Include="Views\Home\SiteMap.cshtml" />
+    <Content Include="Views\Home\Help.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartAdmin\SmartAdmin.csproj">
+      <Project>{d6e561e0-04bf-4147-9d6b-0ffe768104be}</Project>
+      <Name>SmartAdmin</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -157,7 +178,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>1250</DevelopmentServerPort>
+          <DevelopmentServerPort>54659</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

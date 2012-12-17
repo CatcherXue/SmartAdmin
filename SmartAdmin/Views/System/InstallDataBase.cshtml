@@ -8,39 +8,10 @@
     <title>数据库配置 - 网站后台管理系统V1.0.1</title>
     <meta name="description" content="安装向导" />
     <meta name="keywords" content="安装向导" />
-    <!-- Favicons -->
-    <link rel="shortcut icon" type="image/png" href="@Url.Content("~/content/img/favicons/favicon.png")" />
-    <link rel="icon" type="image/png" href="@Url.Content("~/content/img/favicons/favicon.png")" />
-    <link rel="apple-touch-icon" href="@Url.Content("~/content/img/favicons/apple.png")" />
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="@Url.Content("~/content/css/style.css")" type="text/css" />
-    <!-- Your Custom Stylesheet -->
-    <link rel="stylesheet" href="@Url.Content("~/content/css/custom.css")" type="text/css" />
-    <!--swfobject - needed only if you require <video> tag support for older browsers -->
-    <script type="text/javascript" src="@Url.Content("~/content/js/swfobject.js")"></script>
-    <!-- jQuery with plugins -->
-    <script type="text/javascript" src="@Url.Content("~/content/js/jquery-1.4.2.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.ui.core.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.ui.widget.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.ui.tabs.min.js")"></script>
-    <!-- jQuery tooltips -->
-    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.tipTip.min.js")"></script>
-    <!-- Superfish navigation -->
-    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.superfish.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.supersubs.min.js")"></script>
-    <!-- jQuery form validation -->
-    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.validate_pack.js")"></script>
-    <!-- jQuery popup box -->
-    <script type="text/javascript" src="@Url.Content("~/content/js/jquery.nyroModal.pack.js")"></script>
-    <!-- Internet Explorer Fixes -->
-    <!--[if IE]>
-		<link rel="stylesheet" type="text/css" media="all" href="css/ie.css"/>
-		<script src="js/html5.js"></script>
-		<![endif]-->
-    <!--Upgrade MSIE5.5-7 to be compatible with MSIE8: http://ie7-js.googlecode.com/svn/version/2.1(beta3)/IE8.js -->
-    <!--[if lt IE 8]>
-		<script src="js/IE8.js"></script>
-		<![endif]-->
+    
+    <!--应用公共头文件-->
+    @Html.Partial("_ReferenceHead")
+
     <script type="text/javascript">
         $(document).ready(function () {
         });
@@ -112,7 +83,5 @@
         </div>
     </footer>
     <!-- End of Page footer -->
-    <!-- User interface javascript load -->
-    <script type="text/javascript" src="@Url.Content("~/content/js/administry.js")"></script>
 </body>
 </html>

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Smart.Admin;
 using System.Drawing;
+using Smart.Admin.Helpers;
 
 namespace Smart.Admin.Controllers
 {
@@ -26,32 +27,6 @@ namespace Smart.Admin.Controllers
         [Filter.DefaultAuthorizationFilter]
         public ActionResult Index()
         {
-            //添加一条测试数据
-            /*
-            Models.User user = new Models.User();
-            user.CurrentIPAddress = Request.UserHostAddress;
-            user.EmailAddress = "smartbooks@qq.com";
-            user.EndLoginDate = DateTime.Now;
-            user.MutileOnLine = false;
-            user.Nick = "飞翔的小鸟";
-            user.OnLine = false;
-            user.Password = "123456789";
-            user.RegisterDate = DateTime.Now;
-            user.UserName = new Random().Next(999999).ToString();
-            user.UserRole = "超级管理员";
-
-            smartAdminDB.Users.Add(user);
-
-            smartAdminDB.SaveChanges();
-
-            var data = from u in smartAdminDB.Users
-                       //where u.UserName == user.UserName
-                       orderby u.RegisterDate descending
-                       select u;
-            
-            ViewBag.Data = data;
-            */
-            //return View("~/Views/System/Login.cshtml");
             return View();
         }
 
@@ -95,7 +70,7 @@ namespace Smart.Admin.Controllers
                 ViewBag.Message = "用户名或密码错误，请重新登录";
                 return View("~/Views/System/Login.cshtml");
             }
-            
+
             //一周内免登陆设置
             if (remember == "1")
             {
@@ -130,7 +105,6 @@ namespace Smart.Admin.Controllers
         public ActionResult LoginOut(string username)
         {
             Response.Cookies.Add(new HttpCookie("username", ""));
-            //return View("~/Views/System/Login.cshtml");
 
             return new RedirectResult("~/System/Login", false);
         }
