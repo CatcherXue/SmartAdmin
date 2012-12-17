@@ -6,3 +6,12 @@ G:\开源项目\SmartDevelop\SmartAdmin\SmartPortal\bin\Smart.Admin.pdb
 G:\开源项目\SmartDevelop\SmartAdmin\SmartPortal\obj\Debug\ResolveAssemblyReference.cache
 G:\开源项目\SmartDevelop\SmartAdmin\SmartPortal\obj\Debug\Smart.Portal.dll
 G:\开源项目\SmartDevelop\SmartAdmin\SmartPortal\obj\Debug\Smart.Portal.pdb
+G:\开源项目\GitHub\SmartAdmin\SmartPortal\bin\Smart.Portal.dll
+G:\开源项目\GitHub\SmartAdmin\SmartPortal\bin\Smart.Portal.pdb
+G:\开源项目\GitHub\SmartAdmin\SmartPortal\bin\Smart.Security.dll
+G:\开源项目\GitHub\SmartAdmin\SmartPortal\bin\Smart.Utility.dll
+G:\开源项目\GitHub\SmartAdmin\SmartPortal\bin\Smart.Security.pdb
+G:\开源项目\GitHub\SmartAdmin\SmartPortal\bin\Smart.Security.xml
+G:\开源项目\GitHub\SmartAdmin\SmartPortal\obj\Debug\ResolveAssemblyReference.cache
+G:\开源项目\GitHub\SmartAdmin\SmartPortal\obj\Debug\Smart.Portal.dll
+G:\开源项目\GitHub\SmartAdmin\SmartPortal\obj\Debug\Smart.Portal.pdb

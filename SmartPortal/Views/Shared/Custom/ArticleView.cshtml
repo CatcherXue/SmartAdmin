@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Smart.Portal.Models.Pages
+@{
     Layout = null;
 }
 <div id="news1">
@@ -6,7 +7,7 @@
         <div class="titleft">
             行业新闻</div>
         <div class="titright">
-            <a href="/News-List.aspx?Type=2">
+            <a href="@Url.Content("~/Home/News")">
                 <img src="@Url.Content("~/Content/images/more.jpg")" border="0" alt="查看更多产品" /></a></div>
     </div>
     <ul>

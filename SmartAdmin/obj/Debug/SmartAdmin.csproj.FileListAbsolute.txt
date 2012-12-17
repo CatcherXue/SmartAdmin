@@ -10,3 +10,9 @@ G:\开源项目\SmartDevelop\SmartAdmin\SmartAdmin\bin\MySql.Data.dll
 G:\开源项目\SmartDevelop\SmartAdmin\SmartAdmin\obj\Debug\ResolveAssemblyReference.cache
 G:\开源项目\SmartDevelop\SmartAdmin\SmartAdmin\obj\Debug\Smart.Admin.dll
 G:\开源项目\SmartDevelop\SmartAdmin\SmartAdmin\obj\Debug\Smart.Admin.pdb
+G:\开源项目\GitHub\SmartAdmin\SmartAdmin\bin\Smart.Admin.dll
+G:\开源项目\GitHub\SmartAdmin\SmartAdmin\bin\Smart.Admin.pdb
+G:\开源项目\GitHub\SmartAdmin\SmartAdmin\bin\MySql.Data.dll
+G:\开源项目\GitHub\SmartAdmin\SmartAdmin\obj\Debug\ResolveAssemblyReference.cache
+G:\开源项目\GitHub\SmartAdmin\SmartAdmin\obj\Debug\Smart.Admin.dll
+G:\开源项目\GitHub\SmartAdmin\SmartAdmin\obj\Debug\Smart.Admin.pdb

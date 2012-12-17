@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Smart.Portal.Models.Pages
+@{
     ViewBag.Title = "产品展示";
 }
 <!--left开始-->
@@ -11,7 +12,11 @@
 </div>
 <!--left结束-->
 <!--right开始-->
-<div id="right" style="margin-top:-10px;">
-    @Html.Partial("Custom/ProductView")
+<div id="right" style="margin-top: -10px;">
+    @Html.Partial("Custom/ProductView", this.Model)
+    @foreach (var data in Model.DataSource)
+    {
+        @data
+    }
 </div>
 <!--right结束-->

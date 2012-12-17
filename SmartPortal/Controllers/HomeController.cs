@@ -25,14 +25,22 @@ namespace Smart.Portal.Controllers
         {
             return View();
         }
-        
+
         /// <summary>
         /// 产品展示
         /// </summary>
         /// <returns></returns>
         public ActionResult Products()
         {
-            return View();
+            Models.Pages page = new Models.Pages();
+            page.CurrentPage = 1;
+            page.PageCount = 10;
+            page.PageSize = 20;
+            page.DataSource = new List<string>();
+            //page.DataSource.Add("01");
+
+            return View(page);
+
         }
 
         /// <summary>
@@ -124,7 +132,7 @@ namespace Smart.Portal.Controllers
         {
             return View();
         }
-        
+
         /// <summary>
         /// 网站地图
         /// </summary>
