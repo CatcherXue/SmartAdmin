@@ -15,3 +15,7 @@ G:\开源项目\GitHub\SmartAdmin\SmartPortal\bin\Smart.Security.xml
 G:\开源项目\GitHub\SmartAdmin\SmartPortal\obj\Debug\ResolveAssemblyReference.cache
 G:\开源项目\GitHub\SmartAdmin\SmartPortal\obj\Debug\Smart.Portal.dll
 G:\开源项目\GitHub\SmartAdmin\SmartPortal\obj\Debug\Smart.Portal.pdb
+G:\开源项目\GitHub\SmartAdmin\SmartPortal\bin\Smart.Admin.dll
+G:\开源项目\GitHub\SmartAdmin\SmartPortal\bin\Smart.Admin.pdb
+G:\开源项目\GitHub\SmartAdmin\SmartPortal\bin\MvcPager.dll
+G:\开源项目\GitHub\SmartAdmin\SmartPortal\bin\MvcPager.pdb

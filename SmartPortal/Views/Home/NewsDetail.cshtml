@@ -1,7 +1,10 @@
-﻿@using Webdiyer.WebControls.Mvc
-@model PagedList<Smart.Admin.Models.Article>
+﻿@model Smart.Admin.Models.Article
 @{
-    ViewBag.Title = "新闻资讯";
+    ViewBag.Title = @Model.ArticleTitle;
+    ViewBag.Keywords = @Model.Keywords;
+    ViewBag.Description = @Model.Summary;
+    ViewBag.About = @Model.About;
+    ViewBag.Date = @Model.PublishTime;
 }
 <!--left开始-->
 <div id="left">
@@ -18,7 +21,7 @@
         <!--tit开始-->
         <div class="tit">
             <div class="titleft">
-                详情介绍
+                详细内容
             </div>
             <div class="titright" style="margin-top: -7px;">
                 <img src="@Url.Content("~/Content/images/more.jpg")" border="0" />
@@ -27,20 +30,12 @@
         <!--tit结束-->
         <!--示例内容-->
         <div class="bj">
-            <div>
-                <ul class="pagelist1">
-                    @foreach (var m in Model)
-                    {
-                        <li><a href='@Url.Content("~/Home/NewsDetail?id=")@m.ID' target="_blank"><span class="lbt">@m.ArticleTitle</span>
-                            <span class="ldt">@m.PublishTime.ToString("yyyy-MM-dd")</span> </a></li>
-                    }
-                </ul>
-            </div>
-            <div>
-                &nbsp;&nbsp;&nbsp;&nbsp;
-            </div>
-            <!--分页开始-->
-            @Html.Pager(Model, new PagerOptions { PageIndexParameterName = "ID" })
+            <br />
+            <h1>@Model.ArticleTitle</h1>
+            <h2>@Model.About</h2>
+            <p>
+                @Model.Content
+            </p>
         </div>
         <!--示例内容结束-->
     </div>

@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SmartAdmin\bin\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Smart.Security">
       <HintPath>..\..\SmartSecurity\bin\Debug\Smart.Security.dll</HintPath>
@@ -149,6 +153,17 @@
     <Content Include="Views\Home\SiteMap.cshtml" />
     <Content Include="Views\Home\Help.cshtml" />
     <Content Include="Views\Home\Products.cshtml" />
+    <Content Include="Views\Home\NewsDetail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MvcPager\MvcPager.csproj">
+      <Project>{4BA9F10C-67B7-4CD6-87B1-0519ADBCA2A1}</Project>
+      <Name>MvcPager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartAdmin\SmartAdmin.csproj">
+      <Project>{D6E561E0-04BF-4147-9D6B-0FFE768104BE}</Project>
+      <Name>SmartAdmin</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

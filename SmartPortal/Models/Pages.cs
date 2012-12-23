@@ -28,6 +28,6 @@ namespace Smart.Portal.Models
         /// <summary>
         /// 数据源
         /// </summary>
-        public List<string> DataSource { get; set; }
+        public object DataSource { get; set; }
     }
 }

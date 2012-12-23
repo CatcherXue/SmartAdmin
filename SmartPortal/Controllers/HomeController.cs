@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Smart.Admin.Models;
+using Webdiyer.WebControls.Mvc;
 
 namespace Smart.Portal.Controllers
 {
     public class HomeController : Controller
     {
+        private SmartAdminDB smartAdminDB = new SmartAdminDB();
+
         /// <summary>
         /// 网站首页
         /// </summary>
@@ -32,24 +36,35 @@ namespace Smart.Portal.Controllers
         /// <returns></returns>
         public ActionResult Products()
         {
-            Models.Pages page = new Models.Pages();
-            page.CurrentPage = 1;
-            page.PageCount = 10;
-            page.PageSize = 20;
-            page.DataSource = new List<string>();
-            //page.DataSource.Add("01");
-
-            return View(page);
-
+            return View();
         }
 
         /// <summary>
         /// 新闻资讯
         /// </summary>
         /// <returns></returns>
-        public ActionResult News()
+        public ActionResult News(int page = 1, int size = 2)
         {
-            return View();
+            var data = from m in smartAdminDB.Articles
+                       orderby m.PublishTime descending
+                       select m;
+
+            PagedList<Admin.Models.Article> article = data.ToPagedList(page, size);
+
+            return View(article);
+        }
+
+        /// <summary>
+        /// 新闻详情
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult NewsDetail(int id)
+        {
+            var data = from m in smartAdminDB.Articles
+                       where m.ID == id
+                       select m;
+
+            return View(data.First());
         }
 
         /// <summary>
