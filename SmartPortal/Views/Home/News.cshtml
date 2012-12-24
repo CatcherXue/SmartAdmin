@@ -2,13 +2,17 @@
 @model PagedList<Smart.Admin.Models.Article>
 @{
     ViewBag.Title = "新闻资讯";
+    ViewBag.Keywords = "新闻,资讯";
+    ViewBag.Description = "最新新闻列表。";
+    ViewBag.About = "smartbooks";
+    ViewBag.Date = "2012/12/24";
 }
 <!--left开始-->
 <div id="left">
     @Html.Partial("Custom/ProductItem")
     @Html.Partial("Custom/ArticleItem")
     <div class="productlist" style="margin-top: 8px;">
-        <img src="@Url.Content("../content/images/lxwm.jpg")" width="251" alt="" />
+        <img src="@Url.Content("../content/images/lxwm.jpg")" width="251" alt="查看更多" />
     </div>
 </div>
 <!--left结束-->
@@ -18,10 +22,10 @@
         <!--tit开始-->
         <div class="tit">
             <div class="titleft">
-                详情介绍
+                新闻资讯
             </div>
             <div class="titright" style="margin-top: -7px;">
-                <img src="@Url.Content("~/Content/images/more.jpg")" border="0" />
+                <img src="@Url.Content("~/Content/images/more.jpg")" border="0" alt="查看更多" />
             </div>
         </div>
         <!--tit结束-->

@@ -1,6 +1,6 @@
-﻿@model Smart.Admin.Models.Article
+﻿@model Smart.Admin.Models.Products
 @{
-    ViewBag.Title = @Model.ArticleTitle;
+    ViewBag.Title = @Model.ProductsName;
     ViewBag.Keywords = @Model.Keywords;
     ViewBag.Description = @Model.Summary;
     ViewBag.About = @Model.About;
@@ -21,7 +21,7 @@
         <!--tit开始-->
         <div class="tit">
             <div class="titleft">
-                文章内容
+                产品介绍
             </div>
             <div class="titright" style="margin-top: -7px;">
                 <img src="@Url.Content("~/Content/images/more.jpg")" border="0" alt="查看更多" />
@@ -30,19 +30,21 @@
         <!--tit结束-->
         <!--示例内容-->
         <div class="bj">
-            <br />
-            <h1>@Model.ArticleTitle</h1>
+            <img src="@Url.Content("~/" + Model.ProductsImage)" 
+                alt="@Model.ProductsName" 
+                border="0" 
+                align="right" 
+                style="padding: 5px;">
             <span>
                 <b>编辑作者：</b>@Model.About
-                <b>文章来源：</b><a href="@Model.SourceLink" target="_blank">@Model.SourceName</a>
                 <b>发布时间：</b>@Model.PublishTime
             </span>
             <p>
                 <b>摘要：</b>@Model.Summary
             </p>
-            <h2>@Model.Keywords</h2>
+            <h2>@Model.ProductsName</h2>
             <p>
-                @Model.Content
+                @Model.ProductsContent
             </p>
         </div>
         <!--示例内容结束-->

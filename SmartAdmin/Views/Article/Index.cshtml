@@ -51,13 +51,14 @@
                         <tr>
                             <td>@entity.ArticleTitle
                             </td>
-                            <td>@entity.PublishTime.ToLongTimeString()
+                            <td>@entity.PublishTime.ToString("yyyy-MM-dd hh:mm:ss")
                             </td>
                             <td>@entity.About
                             </td>
                             <td>
-                                <a href="@Url.Content("~/Article/Edit?id=")@entity.ID">编辑</a>| <a href="@Url.Content("~/Article/Del?id=")@entity.ID">
-                                    删除</a>
+                                <a href="@Url.Content("~/Article/Copy?id=")@entity.ID">复制</a>| 
+                                <a href="@Url.Content("~/Article/Edit?id=")@entity.ID">编辑</a>| 
+                                <a href="@Url.Content("~/Article/Del?id=")@entity.ID">删除</a>
                             </td>
                         </tr>
                     }

@@ -34,22 +34,42 @@ namespace Smart.Portal.Controllers
         /// 产品展示
         /// </summary>
         /// <returns></returns>
-        public ActionResult Products()
+        public ActionResult Products(int id = 1)
         {
-            return View();
+            var data = from m in smartAdminDB.Products
+                       orderby m.PublishTime descending
+                       select m;
+
+            PagedList<Admin.Models.Products> Products = data.ToPagedList(id, 10);
+
+            return View(Products);
+        }
+
+        /// <summary>
+        /// 产品描述
+        /// </summary>
+        /// <param name="id">编号</param>
+        /// <returns></returns>
+        public ActionResult ProductsDetail(int id)
+        {
+            var data = from m in smartAdminDB.Products
+                       where m.ID == id
+                       select m;
+
+            return View(data.First());
         }
 
         /// <summary>
         /// 新闻资讯
         /// </summary>
         /// <returns></returns>
-        public ActionResult News(int page = 1, int size = 2)
+        public ActionResult News(int id = 1)
         {
             var data = from m in smartAdminDB.Articles
                        orderby m.PublishTime descending
                        select m;
 
-            PagedList<Admin.Models.Article> article = data.ToPagedList(page, size);
+            PagedList<Admin.Models.Article> article = data.ToPagedList(id, 20);
 
             return View(article);
         }
@@ -71,9 +91,16 @@ namespace Smart.Portal.Controllers
         /// 产品知识
         /// </summary>
         /// <returns></returns>
-        public ActionResult ProductsLore()
+        public ActionResult ProductsLore(int id = 1)
         {
-            return View();
+            //获取产品知识分类文章
+            var data = from m in smartAdminDB.Articles
+                       orderby m.PublishTime descending
+                       select m;
+
+            PagedList<Admin.Models.Article> article = data.ToPagedList(id, 20);
+
+            return View(article);
         }
 
         /// <summary>

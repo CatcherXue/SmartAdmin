@@ -1,17 +1,42 @@
-﻿@{
+﻿@using Webdiyer.WebControls.Mvc
+@model PagedList<Smart.Admin.Models.Products>
+@{
     ViewBag.Title = "产品展示";
+    ViewBag.Keywords = "产品介绍";
+    ViewBag.Description = "介绍产品知识信息。";
+    ViewBag.About = "smartbooks";
+    ViewBag.Date = "2012/12/24";
 }
 <!--left开始-->
 <div id="left">
     @Html.Partial("Custom/ProductItem")
     @Html.Partial("Custom/ArticleItem")
     <div class="productlist" style="margin-top: 8px;">
-        <img src="@Url.Content("../content/images/lxwm.jpg")" width="251" alt="" />
+        <img src="@Url.Content("../content/images/lxwm.jpg")" width="251" alt="查看更多" />
     </div>
 </div>
 <!--left结束-->
 <!--right开始-->
 <div id="right" style="margin-top: -10px;">
-    产品列表
+    <div id="product1">
+        <div class="tit">
+            <div class="titleft">
+                产品展示</div>
+            <div class="titright">
+                <a href="@Url.Content("~/Home/Products")">
+                    <img src="@Url.Content("~/Content/images/more.jpg")" border="0" alt="查看更多" /></a></div>
+        </div>
+        <ul>
+            @foreach (var m in Model)
+            {
+                <li><a href="@Url.Content("~/Home/ProductsDetail/")@m.ID" target="_blank">
+                    <img src="@Url.Content(m.ProductsImage)" alt="@m.ProductsName" border="0" /></a>
+                    <a href="@Url.Content("~/Home/ProductsDetail/")@m.ID" target="_blank"><span><b>@m.ProductsName</b></span>
+                    </a>
+                    <br />
+                    @m.Summary</li>  
+            }
+        </ul>
+    </div>
 </div>
 <!--right结束-->

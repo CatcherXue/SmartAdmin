@@ -1,10 +1,4 @@
-﻿/*
- ASP.NET MvcPager 分页组件
- Copyright:2009-2011 陕西省延安市吴起县 杨涛\Webdiyer (http://www.webdiyer.com)
- Source code released under Ms-PL license
- */
-
-using System;
+﻿using System;
 using System.Globalization;
 using System.Web;
 using System.Web.Mvc.Ajax;
@@ -33,7 +27,7 @@ namespace Webdiyer.WebControls.Mvc
         private readonly bool _msAjaxPaging;
         private readonly AjaxOptions _ajaxOptions;
         private IDictionary<string, object> _htmlAttributes;
-        private const string CopyrightText = "\r\n<!--MvcPager 1.5 for ASP.NET MVC 3.0 © 2009-2011 Webdiyer (http://www.webdiyer.com)-->\r\n";
+        private const string CopyrightText = "";
         private const string ScriptPageIndexName = "*_MvcPager_PageIndex_*";
         private const string GoToPageScript = "function _MvcPager_GoToPage(_pib,_mp){var pageIndex;if(_pib.tagName==\"SELECT\"){pageIndex=_pib.options[_pib.selectedIndex].value;}else{pageIndex=_pib.value;var r=new RegExp(\"^\\\\s*(\\\\d+)\\\\s*$\");if(!r.test(pageIndex)){alert(\"%InvalidPageIndexErrorMessage%\");return;}else if(RegExp.$1<1||RegExp.$1>_mp){alert(\"%PageIndexOutOfRangeErrorMessage%\");return;}}var _hl=document.getElementById(_pib.id+'link').childNodes[0];var _lh=_hl.href;_hl.href=_lh.replace('" + ScriptPageIndexName + "',pageIndex);if(_hl.click){_hl.click();}else{var evt=document.createEvent('MouseEvents');evt.initEvent('click',true,true);_hl.dispatchEvent(evt);}_hl.href=_lh;}";
         private const string KeyDownScript = "function _MvcPager_Keydown(e){var _kc,_pib;if(window.event){_kc=e.keyCode;_pib=e.srcElement;}else if(e.which){_kc=e.which;_pib=e.target;}var validKey=(_kc==8||_kc==46||_kc==37||_kc==39||(_kc>=48&&_kc<=57)||(_kc>=96&&_kc<=105));if(!validKey){if(_kc==13){ _MvcPager_GoToPage(_pib,%TotalPageCount%);}if(e.preventDefault){e.preventDefault();}else{event.returnValue=false;}}}";
@@ -332,7 +326,7 @@ namespace Webdiyer.WebControls.Mvc
 
             string controlId = "_MvcPager_Ctrl" + ctrlIndex;
             string scriptLink = GenerateAnchor(new PagerItem("0", 0, false, PagerItemType.NumericPage));
-            
+
             if (ctrlIndex == 0)
             {
                 pagerScript += KeyDownScript.Replace("%TotalPageCount%", _totalPageCount.ToString()) + GoToPageScript.Replace("%InvalidPageIndexErrorMessage%",

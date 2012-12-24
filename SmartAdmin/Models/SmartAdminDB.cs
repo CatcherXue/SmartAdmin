@@ -42,6 +42,16 @@ namespace Smart.Admin.Models
         public DbSet<Menu> Menus { get; set; }
 
         /// <summary>
+        /// 产品信息表
+        /// </summary>
+        public DbSet<Products> Products { get; set; }
+
+        /// <summary>
+        /// 产品类目表
+        /// </summary>
+        public DbSet<ProductsCat> ProductsCats { get; set; }
+
+        /// <summary>
         /// 开放平台接口信息表
         /// </summary>
         //public DbSet<Interface> Interfaces { get; set; }

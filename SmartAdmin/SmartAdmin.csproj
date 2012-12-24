@@ -116,6 +116,8 @@
     <Compile Include="Models\Interface.cs" />
     <Compile Include="Models\Logger.cs" />
     <Compile Include="Models\Menu.cs" />
+    <Compile Include="Models\Products.cs" />
+    <Compile Include="Models\ProductsCat.cs" />
     <Compile Include="Models\Security.cs" />
     <Compile Include="Models\SmartAdminDB.cs" />
     <Compile Include="Models\System.cs" />

@@ -20,6 +20,7 @@ namespace Smart.Admin.Controllers
         public ActionResult Index()
         {
             var data = from m in smartAdminDB.Articles
+                       orderby m.PublishTime descending
                        select m;
 
             return View(data);
@@ -33,6 +34,19 @@ namespace Smart.Admin.Controllers
             entity.PublishTime = DateTime.Now;
 
             return View(entity);
+        }
+
+        [HttpGet]
+        public ActionResult Copy(int id)
+        {
+            Models.Article entity = (from m in smartAdminDB.Articles
+                                     where m.ID == id
+                                     select m).First();
+            entity.PublishTime = DateTime.Now;
+            smartAdminDB.Articles.Add(entity);
+            smartAdminDB.SaveChanges();
+
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
@@ -58,7 +72,7 @@ namespace Smart.Admin.Controllers
             });
         }
 
-        [HttpGet]        
+        [HttpGet]
         public ActionResult Edit(int id)
         {
             var data = from m in smartAdminDB.Articles

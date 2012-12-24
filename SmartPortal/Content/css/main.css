@@ -132,7 +132,7 @@ h1 span { color: #999; font-weight: lighter; font-size: 12px; float: right; }
 
 .pagelist1 ul { }
 
-.pagelist1 li { height: 30px; list-style: none; }
+.pagelist1 li { height: 30px; list-style: none; padding-left:10px; }
 
 .pagelist1 li a .lbt { display: block; float: left; padding-left: 20px; text-indent: 10px !important; text-decoration: none; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; display: inline; }
 

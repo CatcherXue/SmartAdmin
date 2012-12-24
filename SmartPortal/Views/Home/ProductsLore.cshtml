@@ -1,12 +1,18 @@
-﻿@{
+﻿@using Webdiyer.WebControls.Mvc
+@model PagedList<Smart.Admin.Models.Article>
+@{
     ViewBag.Title = "产品知识";
+    ViewBag.Keywords = "产品介绍,产品知识";
+    ViewBag.Description = "关于产品使用的相关介绍。";
+    ViewBag.About = "smartbooks";
+    ViewBag.Date = "2012/12/24";
 }
 <!--left开始-->
 <div id="left">
     @Html.Partial("Custom/ProductItem")
     @Html.Partial("Custom/ArticleItem")
     <div class="productlist" style="margin-top: 8px;">
-        <img src="@Url.Content("../content/images/lxwm.jpg")" width="251" alt="" />
+        <img src="@Url.Content("../content/images/lxwm.jpg")" width="251" alt="查看更多" />
     </div>
 </div>
 <!--left结束-->
@@ -16,16 +22,29 @@
         <!--tit开始-->
         <div class="tit">
             <div class="titleft">
-                详情介绍
+                产品知识
             </div>
             <div class="titright" style="margin-top: -7px;">
-                <img src="@Url.Content("~/Content/images/more.jpg")" border="0" />
+                <img src="@Url.Content("~/Content/images/more.jpg")" border="0" alt="查看更多" />
             </div>
         </div>
         <!--tit结束-->
         <!--示例内容-->
         <div class="bj">
-            @Html.Partial("Custom/ArticleList")
+            <div>
+                <ul class="pagelist1">
+                    @foreach (var m in Model)
+                    {
+                        <li><a href='@Url.Content("~/Home/NewsDetail?id=")@m.ID' target="_blank"><span class="lbt">@m.ArticleTitle</span>
+                            <span class="ldt">@m.PublishTime.ToString("yyyy-MM-dd")</span> </a></li>
+                    }
+                </ul>
+            </div>
+            <div>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+            <!--分页开始-->
+            @Html.Pager(Model, new PagerOptions { PageIndexParameterName = "ID" })
         </div>
         <!--示例内容结束-->
     </div>
